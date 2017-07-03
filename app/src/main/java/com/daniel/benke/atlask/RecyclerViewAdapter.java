@@ -33,8 +33,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
 
     @Override
     public void onBindViewHolder(RecyclerViewHolders holder, int position) {
-        holder.countryName.setText(itemList.get(position).getName());
-        holder.countryPhoto.setImageResource(itemList.get(position).getPhoto());
+        holder.laminaName.setText(itemList.get(position).getName());
+        holder.laminaPhoto.setImageResource(itemList.get(position).getPhoto());
     }
 
     @Override

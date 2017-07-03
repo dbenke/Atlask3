@@ -23,20 +23,20 @@ public class EsofagoZMuscularActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_esofagozmuscular);
 
-        fab = (FloatingActionButton) this.findViewById(R.id.fab);
-        fabc = (FloatingActionButton) this.findViewById(R.id.fabc);
-        fabz = (FloatingActionButton) this.findViewById(R.id.fabz);
+        fab = (FloatingActionButton) this.findViewById(R.id.fabtexto);
+        fabc = (FloatingActionButton) this.findViewById(R.id.fabclean);
+        fabz = (FloatingActionButton) this.findViewById(R.id.fabzoom);
 
-        this.findViewById(R.id.tabT).setVisibility (View.INVISIBLE);
-        this.findViewById(R.id.tabC).setVisibility (View.VISIBLE);
+        this.findViewById(R.id.tabText).setVisibility (View.INVISIBLE);
+        this.findViewById(R.id.tabClean).setVisibility (View.VISIBLE);
 
-        findViewById(R.id.fabz).setVisibility(View.INVISIBLE);
+        findViewById(R.id.fabzoom).setVisibility(View.INVISIBLE);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                findViewById(R.id.tabT).setVisibility(findViewById(R.id.tabT).getVisibility() == View.INVISIBLE ? View.VISIBLE
+                findViewById(R.id.tabText).setVisibility(findViewById(R.id.tabText).getVisibility() == View.INVISIBLE ? View.VISIBLE
                         : View.INVISIBLE);
 
 //                Intent intent = new Intent(MainActivity.this, NewMessageActivity.class);
@@ -50,7 +50,7 @@ public class EsofagoZMuscularActivity extends Activity {
             public void onClick(View view) {
 
    //             findViewById(R.id.tabC).setVisibility(View.VISIBLE);
-                findViewById(R.id.tabC).setVisibility(findViewById(R.id.tabC).getVisibility() == View.INVISIBLE ? View.VISIBLE
+                findViewById(R.id.tabClean).setVisibility(findViewById(R.id.tabClean).getVisibility() == View.INVISIBLE ? View.VISIBLE
                         : View.INVISIBLE);
 //                Intent intent = new Intent(MainActivity.this, NewMessageActivity.class);
 //                startActivity(intent);
@@ -106,7 +106,7 @@ public class EsofagoZMuscularActivity extends Activity {
 
             @Override
             public void onTabChanged(String s) {
-                findViewById(R.id.tabC).setVisibility(View.INVISIBLE);
+                findViewById(R.id.tabClean).setVisibility(View.INVISIBLE);
 
             }
 

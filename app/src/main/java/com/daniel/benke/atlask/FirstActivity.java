@@ -45,7 +45,7 @@ public class FirstActivity extends AppCompatActivity {
                 switch(rowListItem.get(position).getName()) {
 
                     case "Esôfago" :
-                        //Toast.makeText(view.getContext(), "Clicked Country Position = " + "this.countryName.getText()" , Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(view.getContext(), "Clicked Country Position = " + "this.laminaName.getText()" , Toast.LENGTH_SHORT).show();
 
                         startActivity(nextScreen);
 

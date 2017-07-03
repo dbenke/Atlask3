@@ -30,12 +30,12 @@ public class BexigaActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bexiga);
 
-        fab = (FloatingActionButton) this.findViewById(R.id.fab);
-        fabc = (FloatingActionButton) this.findViewById(R.id.fabc);
-        fabz = (FloatingActionButton) this.findViewById(R.id.fabz);
+        fab = (FloatingActionButton) this.findViewById(R.id.fabtexto);
+        fabc = (FloatingActionButton) this.findViewById(R.id.fabclean);
+        fabz = (FloatingActionButton) this.findViewById(R.id.fabzoom);
 
-        this.findViewById(R.id.tabT).setVisibility (View.INVISIBLE);
-        this.findViewById(R.id.tabC).setVisibility (View.VISIBLE);
+        this.findViewById(R.id.tabText).setVisibility (View.INVISIBLE);
+        this.findViewById(R.id.tabClean).setVisibility (View.VISIBLE);
 
         //tabsa = (TabLayout)findViewById(R.id.tabHost);
         //tabsa.setTabMode(TabLayout.MODE_SCROLLABLE);
@@ -48,9 +48,9 @@ public class BexigaActivity extends Activity {
         String current = host.getCurrentTabTag();
         // Toast.makeText(host.getContext(), "Cliccasdfado em:" + current, Toast.LENGTH_LONG).show();
         if (current=="zoom") {
-            findViewById(R.id.fabz).setVisibility(View.VISIBLE);
+            findViewById(R.id.fabzoom).setVisibility(View.VISIBLE);
         }
-        else findViewById(R.id.fabz).setVisibility(View.INVISIBLE);
+        else findViewById(R.id.fabzoom).setVisibility(View.INVISIBLE);
 
 
 
@@ -58,7 +58,7 @@ public class BexigaActivity extends Activity {
             @Override
             public void onClick(View view) {
 
-                findViewById(R.id.tabT).setVisibility(findViewById(R.id.tabT).getVisibility() == View.INVISIBLE ? View.VISIBLE
+                findViewById(R.id.tabText).setVisibility(findViewById(R.id.tabText).getVisibility() == View.INVISIBLE ? View.VISIBLE
                         : View.INVISIBLE);
 
 //                Intent intent = new Intent(MainActivity.this, NewMessageActivity.class);
@@ -72,7 +72,7 @@ public class BexigaActivity extends Activity {
             public void onClick(View view) {
 
                 //             findViewById(R.id.tabC).setVisibility(View.VISIBLE);
-                findViewById(R.id.tabC).setVisibility(findViewById(R.id.tabC).getVisibility() == View.INVISIBLE ? View.VISIBLE
+                findViewById(R.id.tabClean).setVisibility(findViewById(R.id.tabClean).getVisibility() == View.INVISIBLE ? View.VISIBLE
                         : View.INVISIBLE);
 //                Intent intent = new Intent(MainActivity.this, NewMessageActivity.class);
 //                startActivity(intent);
@@ -194,14 +194,14 @@ public class BexigaActivity extends Activity {
         host.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String s) {
-                findViewById(R.id.tabC).setVisibility(View.INVISIBLE);
+                findViewById(R.id.tabClean).setVisibility(View.INVISIBLE);
                 TabHost host = (TabHost)findViewById(R.id.tabHost);
                 String current = host.getCurrentTabTag();
                 // Toast.makeText(host.getContext(), "Cliccasdfado em:" + current, Toast.LENGTH_LONG).show();
                 if (current=="zoom") {
-                    findViewById(R.id.fabz).setVisibility(View.VISIBLE);
+                    findViewById(R.id.fabzoom).setVisibility(View.VISIBLE);
                 }
-                else findViewById(R.id.fabz).setVisibility(View.INVISIBLE);
+                else findViewById(R.id.fabzoom).setVisibility(View.INVISIBLE);
 
 
                 //HorizontalScrollView horizontalScrollview;
