@@ -35,6 +35,9 @@
             android:label="Sobre o Atlas Virtual"
             android:screenOrientation="portrait"
             android:parentActivityName=".FirstActivity"/>
-    </application>
+        <activity android:name=".BexigaTextoActivity"
+            android:label="Bexiga"
+            android:screenOrientation="portrait"/>
+</application>
 
 </manifest>

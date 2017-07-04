@@ -17,8 +17,8 @@ public class RecyclerViewHolders extends RecyclerView.ViewHolder implements View
     public TextView laminaName;
     public ImageView laminaPhoto;
 
-    private String text2;
-    private final Context context;
+   // private String text2;
+    //private final Context context;
 
 
     public RecyclerViewHolders(View itemView) {
@@ -27,15 +27,15 @@ public class RecyclerViewHolders extends RecyclerView.ViewHolder implements View
         laminaName = (TextView)itemView.findViewById(R.id.lamina_name);
         laminaPhoto = (ImageView)itemView.findViewById(R.id.lamina_photo);
 
-        context = itemView.getContext();
+  //      context = itemView.getContext();
 
     }
 
     @Override
     public void onClick(View view) {
-       text2 =this.laminaName.getText().toString();
+      // text2 =this.laminaName.getText().toString();
         //Toast.makeText(view.getContext(), "Clicked Country Position = " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
-        Toast.makeText(view.getContext(), "Clicked Country Position = " + text2, Toast.LENGTH_SHORT).show();
+       // Toast.makeText(view.getContext(), "Clicked Country Position = " + text2, Toast.LENGTH_SHORT).show();
 
 
 

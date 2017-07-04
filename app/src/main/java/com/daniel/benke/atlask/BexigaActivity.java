@@ -4,13 +4,17 @@ package com.daniel.benke.atlask;
  * Created by Andrea on 06/02/2017.
  */
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -19,9 +23,10 @@ import android.widget.HorizontalScrollView;
 import android.widget.TabHost;
 import android.widget.Toast;
 
-public class BexigaActivity extends Activity {
+
+public class BexigaActivity extends AppCompatActivity {
     ReclickableTabHost tabHost;
-    private FloatingActionButton fab, fabc,fabz;
+    private FloatingActionButton fabtexto, fabc,fabz;
     //  LinearLayout esofagoLayout = (LinearLayout) this.findViewById( R.id.esofagos);
     private TabLayout tabsa;
 
@@ -30,9 +35,18 @@ public class BexigaActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bexiga);
 
-        fab = (FloatingActionButton) this.findViewById(R.id.fabtexto);
+
+
+        setTitle("Bexiga");
+
+
+        fabtexto = (FloatingActionButton) this.findViewById(R.id.fabtexto);
         fabc = (FloatingActionButton) this.findViewById(R.id.fabclean);
         fabz = (FloatingActionButton) this.findViewById(R.id.fabzoom);
+
+
+        findViewById(R.id.fabclean).setVisibility(View.INVISIBLE);
+        findViewById(R.id.fabtexto).setVisibility(View.INVISIBLE);
 
         this.findViewById(R.id.tabText).setVisibility (View.INVISIBLE);
         this.findViewById(R.id.tabClean).setVisibility (View.VISIBLE);
@@ -54,12 +68,14 @@ public class BexigaActivity extends Activity {
 
 
 
-        fab.setOnClickListener(new View.OnClickListener() {
+        fabtexto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                findViewById(R.id.tabText).setVisibility(findViewById(R.id.tabText).getVisibility() == View.INVISIBLE ? View.VISIBLE
-                        : View.INVISIBLE);
+              //  findViewById(R.id.tabText).setVisibility(findViewById(R.id.tabText).getVisibility() == View.INVISIBLE ? View.VISIBLE: View.INVISIBLE);
+
+                Intent nextScreen = new Intent(getApplicationContext(), BexigaTextoActivity.class);
+                startActivity(nextScreen);
 
 //                Intent intent = new Intent(MainActivity.this, NewMessageActivity.class);
 //                startActivity(intent);
@@ -72,8 +88,7 @@ public class BexigaActivity extends Activity {
             public void onClick(View view) {
 
                 //             findViewById(R.id.tabC).setVisibility(View.VISIBLE);
-                findViewById(R.id.tabClean).setVisibility(findViewById(R.id.tabClean).getVisibility() == View.INVISIBLE ? View.VISIBLE
-                        : View.INVISIBLE);
+               // findViewById(R.id.tabClean).setVisibility(findViewById(R.id.tabClean).getVisibility() == View.INVISIBLE ? View.VISIBLE: View.INVISIBLE);
 //                Intent intent = new Intent(MainActivity.this, NewMessageActivity.class);
 //                startActivity(intent);
             }
@@ -88,7 +103,7 @@ public class BexigaActivity extends Activity {
                 TabHost host = (TabHost)findViewById(R.id.tabHost);
                 String current = host.getCurrentTabTag();
 
-                Toast.makeText(view.getContext(), current, Toast.LENGTH_LONG).show();
+              //  Toast.makeText(view.getContext(), current, Toast.LENGTH_LONG).show();
                 if (current=="zoom") {
 
                     Intent nextScreen = new Intent(getApplicationContext(), BexigaZActivity.class);
@@ -231,23 +246,24 @@ public class BexigaActivity extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_bexiga, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+            // action with ID action_refresh was selected
+            case R.id.action_settings:
+                // Toast.makeText(this, "Refresh selected", Toast.LENGTH_SHORT).show();
+                Intent nextScreen = new Intent(getApplicationContext(), BexigaTextoActivity.class);
+                startActivity(nextScreen);
+                break;
+            default:
+                break;
         }
 
-        return super.onOptionsItemSelected(item);
+        return true;
     }
 }

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Atlask Virtual</string>
     <string name="action_settings">Sobre</string>
+    <string name="bexiga_action_settings">Saiba mais</string>
     <string name="lamina_name">Bexiga</string>
 
 
@@ -19,6 +20,17 @@
     <string name="esofagozmus">Esôfago zoom muscular</string>
     <string name="esofagozepi">Esôfago zoom muscular</string>
     <string name="title_activity_sobre">Atlas Virtual</string>
+
+    <string name="bexiga_epitelio">TECIDO EPITELIAL ESTRATIFICADO DE TRANSIÇÃO.</string>
+    <string name="bexiga_conjuntivo">TECIDO CONJUNTIVO.</string>
+    <string name="bexiga_muscular">TECIDO MUSCULAR.</string>
+    <string name="bexiga_vaso">VASO SANGUÍNEO.</string>
+    <string name="bexiga_zoom">ZOOM (epitélio + conjuntivo).</string>
+    <string name="bexiga_texto">A bexiga é um órgão oco que armazena urina produzida nos rins, com capacidade média aproximada de 700 a 800 ml (em adultos).\n
+        TECIDO EPITELIAL ESTRATIFICADO DE TRANSIÇÂO - É dito estratificado por possuir mais de uma camada de células, e é classificado como de transição pois a sobreposição das células do epitélio mudam conforme a quantidade de líquido que há na bexiga. É composto por várias camadas de células achatadas e sem forma. Este tecido é muito elástico o que permite a bexiga aumentar e diminuir conforme a quantidade de líquido. Quando a bexiga está vazia este epitélio tem aspecto enrugado, quando cheio tem aspecto liso, sem dobras.\n
+						TECIDO CONJUNTIVO - tem função de sustentar e nutrir a epiderme, pois é nesta camada que estão os vasos sanguíneos, onde o sangue passa e fornece nutrientes e oxigênio.\n
+                        TECIDO MUSCULAR - A bexiga é composta de tecido muscular liso (Músculos encontrados nas vísceras como vaso sanguíneo, útero, intestino), disposto em três camadas. Na parte de dentro e de fora suas fibras musculares lisas estão dispostas de forma longitudinal e na camada entre elas de forma circular.\n
+						VASOS SANGUÍNEOS - Os vasos sanguíneos irrigam o tecido conjuntivo da bexiga, nutrindo e oxigenando este tecido, que ajuda na manutenção dos outros tecidos.</string>
 
 
 

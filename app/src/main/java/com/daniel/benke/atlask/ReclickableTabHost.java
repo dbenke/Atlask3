@@ -18,17 +18,17 @@ public class ReclickableTabHost extends TabHost {
 
     @Override
     public void setCurrentTab(int index) {
-        Toast.makeText(this.getContext(), "A" + index, Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this.getContext(), "A" + index, Toast.LENGTH_SHORT).show();
         if (index == getCurrentTab()) {
 
          //   Toast.makeText(this.getContext(), "dfgdfgdfg", Toast.LENGTH_SHORT).show();
 
-               Toast.makeText(this.getContext(), "B"+findViewById(R.id.tabClean).getVisibility(), Toast.LENGTH_SHORT).show();
+//               Toast.makeText(this.getContext(), "B"+findViewById(R.id.tabClean).getVisibility(), Toast.LENGTH_SHORT).show();
             //findViewById(R.id.tabClean).setVisibility(View.INVISIBLE);
 
 
-            if (findViewById(R.id.tabClean).getVisibility()!= View.VISIBLE){
-                Toast.makeText(this.getContext(), "C"+findViewById(R.id.tabClean).getVisibility(), Toast.LENGTH_SHORT).show();
+            if (findViewById(R.id.tabClean).getVisibility()== View.INVISIBLE){
+//                Toast.makeText(this.getContext(), "C"+findViewById(R.id.tabClean).getVisibility(), Toast.LENGTH_SHORT).show();
                 findViewById(R.id.tabClean).setVisibility(View.VISIBLE);
             }
             else{

@@ -37,7 +37,7 @@ public class FirstActivity extends AppCompatActivity {
             public void onItemClick(View view, int position) {
                // Toast.makeText(view.getContext(), "Clicked Country Position = " + findViewById(R.id.country_name).toString(), Toast.LENGTH_SHORT).show();
                 //Toast.makeText(view.getContext(), "Clicked Country Position = " + position*100, Toast.LENGTH_SHORT).show();
-                Toast.makeText(view.getContext(), rowListItem.get(position).getName(), Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(view.getContext(), rowListItem.get(position).getName(), Toast.LENGTH_SHORT).show();
                 //handle click events here
 
 
