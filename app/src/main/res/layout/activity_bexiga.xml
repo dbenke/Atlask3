@@ -13,11 +13,9 @@
             android:id="@+id/tabHost"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
 
-            app:tabMode="scrollable"
 
-            android:layout_centerHorizontal="true">
+            app:tabMode="scrollable">
 
 
                 <RelativeLayout
@@ -28,7 +26,7 @@
                         <FrameLayout
                             android:id="@android:id/tabcontent"
                             android:layout_width="match_parent"
-                            android:layout_weight="1"
+
                             android:padding="0dp"
                             android:layout_height="match_parent">
 
@@ -39,25 +37,29 @@
                                     android:background="#5b89ff"
                                     android:orientation="vertical">
 
-
                                         <ImageView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+
+                                            android:layout_marginTop="-26dp"
                                             android:src="@drawable/bexigaepitelio"/>
 
                                         <TextView
+                                            android:id="@+id/tabg"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+
+
+                                            android:text="@string/bexiga_epitelio" />
+
+
+                                        <!--<TextView
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
                                             android:layout_marginTop="0dp"
                                             android:gravity="center_horizontal"
                                             android:textSize="20dp"
-                                            android:text="@string/bexiga" />
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginTop="24dp"
-
-                                            android:text="Tecido epitelial Tecido epitelial Tecido epitelial Tecido epitelial Tecido epitelial Tecido epitelial " />
+                                            android:text="@string/bexiga" />-->
 
 
 
@@ -73,21 +75,23 @@
                                         <ImageView
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
+                                            android:layout_marginTop="-26dp"
                                             android:src="@drawable/bexigaconjuntivo"/>
-                                        <TextView
+
+                                        <!--<TextView
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
                                             android:layout_marginTop="0dp"
                                             android:gravity="center_horizontal"
                                             android:textSize="20dp"
-                                            android:text="@string/bexiga" />
+                                            android:text="@string/bexiga" />-->
                                         <TextView
 
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_alignParentTop="true"
-                                            android:layout_marginTop="24dp"
-                                            android:text="Tecido conjuntivo" />
+
+                                            android:text="@string/bexiga_conjuntivo" />
 
 
 
@@ -103,23 +107,24 @@
                                         <ImageView
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
+                                            android:layout_marginTop="-26dp"
                                             android:src="@drawable/bexigamuscular"/>
 
-                                        <TextView
+                                      <!--  <TextView
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
                                             android:layout_marginTop="0dp"
                                             android:gravity="center_horizontal"
                                             android:textSize="20dp"
-                                            android:text="@string/bexiga" />
+                                            android:text="@string/bexiga" />-->
 
                                         <TextView
 
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_alignParentTop="true"
-                                            android:layout_marginTop="24dp"
-                                            android:text="Tecido muscular" />
+
+                                            android:text="@string/bexiga_muscular" />
 
 
 
@@ -135,23 +140,24 @@
                                         <ImageView
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
+                                            android:layout_marginTop="-26dp"
                                             android:src="@drawable/bexigavaso"/>
 
-                                        <TextView
+                                       <!-- <TextView
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
                                             android:layout_marginTop="0dp"
                                             android:gravity="center_horizontal"
                                             android:textSize="20dp"
-                                            android:text="@string/bexiga" />
+                                            android:text="@string/bexiga" />-->
 
                                         <TextView
 
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_alignParentTop="true"
-                                            android:layout_marginTop="24dp"
-                                            android:text="Vaso sanguíneo na Bexiga" />
+
+                                            android:text="@string/bexiga_vaso" />
 
 
 
@@ -167,30 +173,31 @@
                                         <ImageView
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
+                                            android:layout_marginTop="-26dp"
                                             android:src="@drawable/bexigazoomthumb"/>
 
-                                        <TextView
+                                        <!--<TextView
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
                                             android:layout_marginTop="0dp"
                                             android:gravity="center_horizontal"
                                             android:textSize="20dp"
                                             android:text="@string/bexiga" />
-
+-->
                                         <TextView
 
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_alignParentTop="true"
-                                            android:layout_marginTop="24dp"
-                                            android:text="área de zoom para a bexiga" />
+
+                                            android:text="@string/bexiga_zoom" />
 
 
 
                                 </RelativeLayout>
 
                                 <RelativeLayout
-                                    android:id="@+id/tabC"
+                                    android:id="@+id/tabClean"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:background="#5b89ff"
@@ -199,30 +206,31 @@
                                         <ImageView
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
+                                            android:layout_marginTop="-26dp"
                                             android:src="@drawable/bexiga"/>
 
-                                        <TextView
+                                        <!--<TextView
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
                                             android:layout_marginTop="0dp"
                                             android:gravity="center_horizontal"
                                             android:textSize="20dp"
                                             android:text="@string/bexiga" />
-
+-->
                                         <TextView
 
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_alignParentTop="true"
-                                            android:layout_marginTop="24dp"
-                                            android:text=" sem marcação" />
+
+                                            android:text="" />
 
 
 
                                 </RelativeLayout>
 
                                 <RelativeLayout
-                                    android:id="@+id/tabT"
+                                    android:id="@+id/tabText"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:background="#5b89ff"
@@ -253,7 +261,7 @@
                                                     android:layout_alignParentTop="true"
 
 
-                                                    android:text="Texto sobre a bexiga" />
+                                                    android:text="Textodsdsdsds sobre a bexiga" />
                                         </ScrollView>
 
                                 </RelativeLayout>
@@ -339,7 +347,7 @@
 
 
                                                 <android.support.design.widget.FloatingActionButton
-                                                    android:id="@+id/fab"
+                                                    android:id="@+id/fabtexto"
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:layout_margin="16dp"
@@ -349,7 +357,7 @@
                                                     app:layout_anchorGravity="top|center"
                                                     />
                                                 <android.support.design.widget.FloatingActionButton
-                                                    android:id="@+id/fabc"
+                                                    android:id="@+id/fabclean"
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:layout_margin="16dp"
@@ -359,7 +367,7 @@
                                                     app:layout_anchorGravity="top|center"
                                                     />
                                                 <android.support.design.widget.FloatingActionButton
-                                                    android:id="@+id/fabz"
+                                                    android:id="@+id/fabzoom"
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:layout_margin="16dp"
@@ -376,62 +384,62 @@
 
                         </FrameLayout>
 
-                <RelativeLayout android:layout_width="fill_parent" android:layout_height="55dp"
-                    android:layout_alignParentBottom="true">
-                        <ImageView android:id="@+id/previous" android:src="@drawable/previous"
-                            android:alpha="0.6"
-                            android:visibility="invisible"
-                            android:layout_height="62dp" android:layout_width="40dp"
-                            android:layout_alignParentLeft="true"
-                            android:layout_centerVertical="true" />
+                        <RelativeLayout android:layout_width="fill_parent" android:layout_height="55dp"
+                            android:layout_alignParentBottom="true">
+                                <ImageView android:id="@+id/previous" android:src="@drawable/previous"
+                                    android:alpha="0.6"
+                                    android:visibility="invisible"
+                                    android:layout_height="62dp" android:layout_width="40dp"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_centerVertical="true" />
 
-                        <ImageView android:id="@+id/next" android:src="@drawable/next"
-                            android:alpha="0.6"
-                            android:layout_height="62dp" android:layout_width="40dp"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true" />
+                                <ImageView android:id="@+id/next" android:src="@drawable/next"
+                                    android:alpha="0.6"
+                                    android:layout_height="62dp" android:layout_width="40dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true" />
 
 
 
-                        <HorizontalScrollView
-                            android:layout_width="match_parent"
-                            android:id="@+id/horizontal"
-                            android:layout_height="wrap_content"
-                            android:fillViewport="false"
-                            android:layout_alignParentBottom="true"
-                            android:scrollbars="vertical"
-                            android:fadingEdgeLength="14dp"
-                            >
-
-                                <LinearLayout android:id="@+id/home_menu"
-                                    android:orientation="horizontal" android:layout_width="wrap_content"
-                                    android:layout_height="fill_parent" android:gravity="center_vertical">
-
-                                <TabWidget
-                                    android:id="@android:id/tabs"
+                                <HorizontalScrollView
                                     android:layout_width="match_parent"
+                                    android:id="@+id/horizontal"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="0"
+                                    android:fillViewport="false"
                                     android:layout_alignParentBottom="true"
-                                    android:showDividers="middle"
-                                    android:layout_marginBottom="-0dp">
-                               <!--     android:fadeScrollbars="true"
-                                    android:fadingEdgeLength="300dp"
-                                    android:scrollbarAlwaysDrawHorizontalTrack="true"
-                                    android:scrollbars="horizontal"
-                                    android:scrollIndicators="right"
-                                    android:scrollbarDefaultDelayBeforeFade="3000"
-                                    android:scrollbarTrackHorizontal="@color/cardview_dark_background"
-                                    android:scrollbarFadeDuration="1000"
-                                    android:scrollX="-50dp"
--->
+                                    android:scrollbars="vertical"
+                                    android:fadingEdgeLength="14dp"
+                                    >
+
+                                        <LinearLayout android:id="@+id/home_menu"
+                                            android:orientation="horizontal" android:layout_width="wrap_content"
+                                            android:layout_height="fill_parent" android:gravity="center_vertical">
+
+                                                <TabWidget
+                                                    android:id="@android:id/tabs"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_weight="1"
+
+                                                    android:showDividers="middle"
+                                                    android:layout_marginBottom="-0dp">
+                                                        <!--     android:fadeScrollbars="true"
+                                                             android:fadingEdgeLength="300dp"
+                                                             android:scrollbarAlwaysDrawHorizontalTrack="true"
+                                                             android:scrollbars="horizontal"
+                                                             android:scrollIndicators="right"
+                                                             android:scrollbarDefaultDelayBeforeFade="3000"
+                                                             android:scrollbarTrackHorizontal="@color/cardview_dark_background"
+                                                             android:scrollbarFadeDuration="1000"
+                                                             android:scrollX="-50dp"
+                         -->
 
 
-                                </TabWidget>
+                                                </TabWidget>
 
-                                </LinearLayout>
+                                        </LinearLayout>
 
-                        </HorizontalScrollView>
+                                </HorizontalScrollView>
 
                 </RelativeLayout>
                 </RelativeLayout>

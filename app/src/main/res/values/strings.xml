@@ -1,7 +1,10 @@
 <resources>
-    <string name="app_name">Atlask 2.2 Virtual</string>
+
+    <string name="app_name">Atlask2.631 Virtual</string>
+
     <string name="action_settings">Sobre</string>
-    <string name="country_name">Nigeria</string>
+    <string name="bexiga_action_settings">Saiba mais</string>
+    <string name="lamina_name">Bexiga</string>
 
 
     <string name="action_refresh">Settings</string>
@@ -20,77 +23,18 @@
     <string name="esofagozepi">Esôfago zoom muscular</string>
     <string name="title_activity_sobre">Atlas Virtual</string>
 
-    <!-- Strings related to Settings -->
+    <string name="bexiga_epitelio">TECIDO EPITELIAL ESTRATIFICADO DE TRANSIÇÃO.</string>
+    <string name="bexiga_conjuntivo">TECIDO CONJUNTIVO.</string>
+    <string name="bexiga_muscular">TECIDO MUSCULAR.</string>
+    <string name="bexiga_vaso">VASO SANGUÍNEO.</string>
+    <string name="bexiga_zoom">ZOOM (epitélio + conjuntivo).</string>
+    <string name="bexiga_texto">A bexiga é um órgão oco que armazena urina produzida nos rins, com capacidade média aproximada de 700 a 800 ml (em adultos).\n
+        TECIDO EPITELIAL ESTRATIFICADO DE TRANSIÇÂO - É dito estratificado por possuir mais de uma camada de células, e é classificado como de transição pois a sobreposição das células do epitélio mudam conforme a quantidade de líquido que há na bexiga. É composto por várias camadas de células achatadas e sem forma. Este tecido é muito elástico o que permite a bexiga aumentar e diminuir conforme a quantidade de líquido. Quando a bexiga está vazia este epitélio tem aspecto enrugado, quando cheio tem aspecto liso, sem dobras.\n
+						TECIDO CONJUNTIVO - tem função de sustentar e nutrir a epiderme, pois é nesta camada que estão os vasos sanguíneos, onde o sangue passa e fornece nutrientes e oxigênio.\n
+                        TECIDO MUSCULAR - A bexiga é composta de tecido muscular liso (Músculos encontrados nas vísceras como vaso sanguíneo, útero, intestino), disposto em três camadas. Na parte de dentro e de fora suas fibras musculares lisas estão dispostas de forma longitudinal e na camada entre elas de forma circular.\n
+						VASOS SANGUÍNEOS - Os vasos sanguíneos irrigam o tecido conjuntivo da bexiga, nutrindo e oxigenando este tecido, que ajuda na manutenção dos outros tecidos.</string>
 
-    <!-- Example General settings -->
-    <string name="pref_header_general">General</string>
 
-    <string name="pref_title_social_recommendations">Enable social recommendations</string>
-    <string name="pref_description_social_recommendations">Recommendations for people to contact
-        based on your message history
-    </string>
-
-    <string name="pref_title_display_name">Display name</string>
-    <string name="pref_default_display_name">John Smith</string>
-
-    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
-    <string-array name="pref_example_list_titles">
-        <item>Always</item>
-        <item>When possible</item>
-        <item>Never</item>
-    </string-array>
-    <string-array name="pref_example_list_values">
-        <item>1</item>
-        <item>0</item>
-        <item>-1</item>
-    </string-array>
-
-    <!-- Example settings for Data & Sync -->
-    <string name="pref_header_data_sync">Data &amp; sync</string>
-
-    <string name="pref_title_sync_frequency">Sync frequency</string>
-    <string-array name="pref_sync_frequency_titles">
-        <item>15 minutes</item>
-        <item>30 minutes</item>
-        <item>1 hour</item>
-        <item>3 hours</item>
-        <item>6 hours</item>
-        <item>Never</item>
-    </string-array>
-    <string-array name="pref_sync_frequency_values">
-        <item>15</item>
-        <item>30</item>
-        <item>60</item>
-        <item>180</item>
-        <item>360</item>
-        <item>-1</item>
-    </string-array>
-
-    <string-array name="list_preference_entries">
-        <item>Entry 1</item>
-        <item>Entry 2</item>
-        <item>Entry 3</item>
-    </string-array>
-
-    <string-array name="list_preference_entry_values">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-    </string-array>
-
-    <string-array name="multi_select_list_preference_default_value" />
-
-    <string name="pref_title_system_sync_settings">System sync settings</string>
-
-    <!-- Example settings for Notifications -->
-    <string name="pref_header_notifications">Notifications</string>
-
-    <string name="pref_title_new_message_notifications">New message notifications</string>
-
-    <string name="pref_title_ringtone">Ringtone</string>
-    <string name="pref_ringtone_silent">Silent</string>
-
-    <string name="pref_title_vibrate">Vibrate</string>
 
 
 </resources>

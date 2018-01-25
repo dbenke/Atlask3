@@ -185,7 +185,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/tabC"
+                    android:id="@+id/tabClean"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#5b89ff"
@@ -217,7 +217,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/tabT"
+                    android:id="@+id/tabText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#5b89ff"
@@ -334,7 +334,7 @@
 
 
                     <android.support.design.widget.FloatingActionButton
-                    android:id="@+id/fab"
+                    android:id="@+id/fabtexto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="16dp"
@@ -344,7 +344,7 @@
                     app:layout_anchorGravity="top|center"
                />
                     <android.support.design.widget.FloatingActionButton
-                        android:id="@+id/fabc"
+                        android:id="@+id/fabclean"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="16dp"
@@ -354,7 +354,7 @@
                         app:layout_anchorGravity="top|center"
                         />
                     <android.support.design.widget.FloatingActionButton
-                        android:id="@+id/fabz"
+                        android:id="@+id/fabzoom"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="16dp"

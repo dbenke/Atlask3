@@ -13,7 +13,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/country_photo"
+            android:id="@+id/lamina_photo"
             android:layout_width="match_parent"
             android:layout_height="160dp"
             android:contentDescription="@string/action_settings"
@@ -23,12 +23,12 @@
             android:scaleType="centerCrop" />
 
         <TextView
-            android:id="@+id/country_name"
+            android:id="@+id/lamina_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textSize="36sp"
-            android:text="@string/country_name"
+            android:text="@string/lamina_name"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold"
             android:layout_centerInParent="true"/>
