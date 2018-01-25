@@ -206,17 +206,48 @@ public class BexigaActivity extends AppCompatActivity {
 
 
 
+       // host.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
         host.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String s) {
+
                 findViewById(R.id.tabClean).setVisibility(View.INVISIBLE);
+
                 TabHost host = (TabHost)findViewById(R.id.tabHost);
                 String current = host.getCurrentTabTag();
+
                 // Toast.makeText(host.getContext(), "Cliccasdfado em:" + current, Toast.LENGTH_LONG).show();
                 if (current=="zoom") {
                     findViewById(R.id.fabzoom).setVisibility(View.VISIBLE);
                 }
+
                 else findViewById(R.id.fabzoom).setVisibility(View.INVISIBLE);
+
+
+
+
+                    //host.setVisibility(findViewById(R.id.tabHost).getVisibility() == View.INVISIBLE ? View.VISIBLE
+                     //       : View.INVISIBLE);
+                    //Toast.makeText(host.getContext(), "Cliccasdfado em:" + current, Toast.LENGTH_LONG).show();
+
+
+               // host.setVisibility(host.getVisibility() == View.INVISIBLE ? View.VISIBLE
+                //        : View.INVISIBLE);
+
+                //current = host.getVisibility();
+/*
+                if (host.getVisibility() == View.INVISIBLE) {
+                    host.setVisibility(View.VISIBLE);
+                }
+                    else {
+                    findViewById(R.id.tabC).setVisibility(View.VISIBLE);
+                    host.setVisibility(View.INVISIBLE);
+                }
+*/
+
+
+
+                //Toast.makeText(host.getContext(), "Cliccasdfado em:" + current, Toast.LENGTH_LONG).show();
 
 
                 //HorizontalScrollView horizontalScrollview;

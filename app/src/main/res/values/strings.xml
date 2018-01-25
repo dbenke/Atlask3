@@ -1,5 +1,7 @@
 <resources>
+
     <string name="app_name">Atlask2.631 Virtual</string>
+
     <string name="action_settings">Sobre</string>
     <string name="bexiga_action_settings">Saiba mais</string>
     <string name="lamina_name">Bexiga</string>

@@ -22,6 +22,9 @@ public class ReclickableTabHost extends TabHost {
         if (index == getCurrentTab()) {
 
          //   Toast.makeText(this.getContext(), "dfgdfgdfg", Toast.LENGTH_SHORT).show();
+            findViewById(R.id.tabC).setVisibility(findViewById(R.id.tabC).getVisibility() == View.INVISIBLE ? View.VISIBLE
+                    : View.INVISIBLE);
+
 
 //               Toast.makeText(this.getContext(), "B"+findViewById(R.id.tabClean).getVisibility(), Toast.LENGTH_SHORT).show();
             //findViewById(R.id.tabClean).setVisibility(View.INVISIBLE);
@@ -34,6 +37,7 @@ public class ReclickableTabHost extends TabHost {
             else{
                 findViewById(R.id.tabClean).setVisibility(View.INVISIBLE);
             }
+
 
           //  super.setCurrentTab(index+1);
           //  super.setCurrentTab(index);
