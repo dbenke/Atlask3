@@ -7,6 +7,8 @@ package com.daniel.benke.atlask;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Matrix;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
@@ -17,23 +19,39 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.HorizontalScrollView;
+import android.widget.ImageView;
 import android.widget.TabHost;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class BexigaActivity extends AppCompatActivity {
-    ReclickableTabHost tabHost;
+  //  ReclickableTabHost tabHost;
     private FloatingActionButton fabtexto, fabc,fabz;
     //  LinearLayout esofagoLayout = (LinearLayout) this.findViewById( R.id.esofagos);
     private TabLayout tabsa;
+
+    private float scale = 1f;
+    private ImageView imageView, iv3,iv4,iv5,iv6,iv7;
+    private ScaleGestureDetector scaleGestureDetector;
+    private Matrix matrix = new Matrix();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bexiga);
+
+        imageView = (ImageView)findViewById(R.id.itab2);
+        iv3 = (ImageView)findViewById(R.id.itab3);
+        iv4 = (ImageView)findViewById(R.id.itab4);
+        iv5 = (ImageView)findViewById(R.id.itab5);
+        iv6 = (ImageView)findViewById(R.id.itabzoom);
+        iv7 = (ImageView)findViewById(R.id.itabClean);
+        scaleGestureDetector = new ScaleGestureDetector(this,new ScaleListener());
 
 
 
@@ -131,6 +149,8 @@ public class BexigaActivity extends AppCompatActivity {
         spec = host.newTabSpec("epitélio");
         spec.setContent(R.id.tab2);
         spec.setIndicator("epitélio");
+       // spec.setIndicator("epitélio",getResources().getDrawable(setBackgroundColor(view.Color.BLACK));
+
         host.addTab(spec);
 
         //Tab 3
@@ -213,15 +233,33 @@ public class BexigaActivity extends AppCompatActivity {
 
                 findViewById(R.id.tabClean).setVisibility(View.INVISIBLE);
 
+
                 TabHost host = (TabHost)findViewById(R.id.tabHost);
+
+
+
+             //   View view = host.getTabWidget().getChildTabViewAt(1);
+             //   host.getCurrentTabView().setBackgroundColor(2777);
+             //   host.getCurrentTabView().setBackgroundColor(2777);
+             //   TextView textView = (TextView)host.findViewById(R.id.tabg);
+             //   textView.setTextColor(Color.WHITE);
+
+
+
+
+
                 String current = host.getCurrentTabTag();
+                //imageView = (ImageView) host.getCurrentTabView();
 
                 // Toast.makeText(host.getContext(), "Cliccasdfado em:" + current, Toast.LENGTH_LONG).show();
                 if (current=="zoom") {
                     findViewById(R.id.fabzoom).setVisibility(View.VISIBLE);
+                //    imageView = (ImageView)findViewById(R.id.itabzoom);
                 }
 
-                else findViewById(R.id.fabzoom).setVisibility(View.INVISIBLE);
+                else {findViewById(R.id.fabzoom).setVisibility(View.INVISIBLE);
+                //imageView = (ImageView)findViewById(R.id.itabClean);
+                }
 
 
 
@@ -297,4 +335,47 @@ public class BexigaActivity extends AppCompatActivity {
 
         return true;
     }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent ev) {
+
+
+        //findViewById(R.id.tabClean).setVisibility(View.VISIBLE);
+
+        //imageView.setVisibility(View.VISIBLE);
+
+
+
+        scaleGestureDetector.onTouchEvent(ev);
+
+        return true;
+    }
+
+    private class ScaleListener extends ScaleGestureDetector.
+            SimpleOnScaleGestureListener {
+        @Override
+        public boolean onScale(ScaleGestureDetector detector) {
+
+            scale *= detector.getScaleFactor();
+            scale = Math.max(0.8f, Math.min(scale, 3.0f));
+            matrix.setScale(scale, scale);
+
+            //float scaleFactor = detector.getScaleFactor();
+            //scaleFactor = Math.max(0.1f, Math.min(scaleFactor, 5.0f));
+            //matrix.setScale(scaleFactor, scaleFactor);
+
+            //this.findViewById(R.id.tabClean).setImageMatrix(matrix);
+
+            imageView.setImageMatrix(matrix);
+            iv3.setImageMatrix(matrix);
+            iv4.setImageMatrix(matrix);
+            iv5.setImageMatrix(matrix);
+            iv6.setImageMatrix(matrix);
+            iv7.setImageMatrix(matrix);
+            return true;
+        }
+    }
+
+
+
 }

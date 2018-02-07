@@ -37,7 +37,8 @@
             android:parentActivityName=".FirstActivity"/>
         <activity android:name=".BexigaTextoActivity"
             android:label="Bexiga"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:parentActivityName=".BexigaActivity"/>
 </application>
 
 </manifest>

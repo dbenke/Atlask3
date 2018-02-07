@@ -18,10 +18,70 @@
             app:tabMode="scrollable">
 
 
-                <RelativeLayout
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+
+                        <RelativeLayout android:layout_width="match_parent" android:layout_height="35dp"
+                            android:layout_alignParentBottom="true">
+                                <ImageView android:id="@+id/previous" android:src="@drawable/previous"
+                                    android:alpha="0.6"
+                                    android:visibility="invisible"
+                                    android:layout_height="62dp" android:layout_width="40dp"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_centerVertical="true" />
+
+                                <ImageView android:id="@+id/next" android:src="@drawable/next"
+                                    android:alpha="0.6"
+                                    android:layout_height="62dp" android:layout_width="40dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true" />
+
+
+
+                                <HorizontalScrollView
+                                    android:layout_width="match_parent"
+                                    android:id="@+id/horizontal"
+                                    android:layout_height="wrap_content"
+                                    android:fillViewport="true"
+
+                                    android:scrollbars="vertical"
+                                    android:fadingEdgeLength="14dp"
+                                    >
+
+                                        <LinearLayout android:id="@+id/home_menu"
+                                            android:orientation="horizontal" android:layout_width="wrap_content"
+                                            android:layout_height="fill_parent" android:gravity="center_vertical">
+
+                                                <TabWidget
+                                                    android:id="@android:id/tabs"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_weight="1"
+
+                                                    android:showDividers="middle"
+                                                    android:layout_marginBottom="-0dp">
+                                                        <!--     android:fadeScrollbars="true"
+                                                             android:fadingEdgeLength="300dp"
+                                                             android:scrollbarAlwaysDrawHorizontalTrack="true"
+                                                             android:scrollbars="horizontal"
+                                                             android:scrollIndicators="right"
+                                                             android:scrollbarDefaultDelayBeforeFade="3000"
+                                                             android:scrollbarTrackHorizontal="@color/cardview_dark_background"
+                                                             android:scrollbarFadeDuration="1000"
+                                                             android:scrollX="-50dp"
+                         -->
+
+
+                                                </TabWidget>
+
+                                        </LinearLayout>
+
+                                </HorizontalScrollView>
+
+                        </RelativeLayout>
 
                         <FrameLayout
                             android:id="@android:id/tabcontent"
@@ -30,27 +90,44 @@
                             android:padding="0dp"
                             android:layout_height="match_parent">
 
-                                <RelativeLayout
+                                <LinearLayout
                                     android:id="@+id/tab2"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:background="#5b89ff"
                                     android:orientation="vertical">
 
+
+                                                <TextView
+                                                    android:id="@+id/tabg"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="@string/bexiga_epitelio"
+                                                    android:padding="0dip"
+                                                     />
+
+
+
+
                                         <ImageView
+                                            android:id="@+id/itab2"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:scaleType="matrix"
 
-                                            android:layout_marginTop="-26dp"
+
+
+                                            android:layout_marginTop="0dp"
                                             android:src="@drawable/bexigaepitelio"/>
 
-                                        <TextView
-                                            android:id="@+id/tabg"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
 
 
-                                            android:text="@string/bexiga_epitelio" />
+
+
+
+
+
+
 
 
                                         <!--<TextView
@@ -63,19 +140,29 @@
 
 
 
-                                </RelativeLayout>
+                                </LinearLayout>
 
-                                <RelativeLayout
+                                <LinearLayout
                                     android:id="@+id/tab3"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:background="#5b89ff"
                                     android:orientation="vertical">
 
+                                        <TextView
+
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentTop="true"
+
+                                            android:text="@string/bexiga_conjuntivo" />
+
                                         <ImageView
+                                            android:scaleType="matrix"
+                                            android:id="@+id/itab3"
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
-                                            android:layout_marginTop="-26dp"
+                                            android:layout_marginTop="0dp"
                                             android:src="@drawable/bexigaconjuntivo"/>
 
                                         <!--<TextView
@@ -85,29 +172,31 @@
                                             android:gravity="center_horizontal"
                                             android:textSize="20dp"
                                             android:text="@string/bexiga" />-->
+
+
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/tab4"
+                                    android:scaleType="matrix"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="#5b89ff"
+                                    android:orientation="vertical">
                                         <TextView
 
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_alignParentTop="true"
 
-                                            android:text="@string/bexiga_conjuntivo" />
-
-
-
-                                </RelativeLayout>
-
-                                <RelativeLayout
-                                    android:id="@+id/tab4"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="#5b89ff"
-                                    android:orientation="vertical">
-
+                                            android:text="@string/bexiga_muscular" />
                                         <ImageView
+                                            android:scaleType="matrix"
+                                            android:id="@+id/itab4"
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
-                                            android:layout_marginTop="-26dp"
+                                            android:layout_marginTop="0dp"
                                             android:src="@drawable/bexigamuscular"/>
 
                                       <!--  <TextView
@@ -118,38 +207,18 @@
                                             android:textSize="20dp"
                                             android:text="@string/bexiga" />-->
 
-                                        <TextView
-
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_alignParentTop="true"
-
-                                            android:text="@string/bexiga_muscular" />
 
 
 
-                                </RelativeLayout>
 
-                                <RelativeLayout
+                                </LinearLayout>
+
+                                <LinearLayout
                                     android:id="@+id/tab5"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:background="#5b89ff"
                                     android:orientation="vertical">
-
-                                        <ImageView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:layout_marginTop="-26dp"
-                                            android:src="@drawable/bexigavaso"/>
-
-                                       <!-- <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:layout_marginTop="0dp"
-                                            android:gravity="center_horizontal"
-                                            android:textSize="20dp"
-                                            android:text="@string/bexiga" />-->
 
                                         <TextView
 
@@ -160,20 +229,47 @@
                                             android:text="@string/bexiga_vaso" />
 
 
+                                        <ImageView
+                                            android:scaleType="matrix"
+                                            android:id="@+id/itab5"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginTop="0dp"
+                                            android:src="@drawable/bexigavaso"/>
 
-                                </RelativeLayout>
+                                       <!-- <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginTop="0dp"
+                                            android:gravity="center_horizontal"
+                                            android:textSize="20dp"
+                                            android:text="@string/bexiga" />-->
 
-                                <RelativeLayout
+
+
+
+                                </LinearLayout>
+
+                                <LinearLayout
                                     android:id="@+id/tab6"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:background="#5b89ff"
                                     android:orientation="vertical">
+                                        <TextView
+
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentTop="true"
+
+                                            android:text="@string/bexiga_zoom" />
 
                                         <ImageView
+                                            android:scaleType="matrix"
+                                            android:id="@+id/itabzoom"
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
-                                            android:layout_marginTop="-26dp"
+                                            android:layout_marginTop="0dp"
                                             android:src="@drawable/bexigazoomthumb"/>
 
                                         <!--<TextView
@@ -184,29 +280,34 @@
                                             android:textSize="20dp"
                                             android:text="@string/bexiga" />
 -->
-                                        <TextView
-
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_alignParentTop="true"
-
-                                            android:text="@string/bexiga_zoom" />
 
 
 
-                                </RelativeLayout>
+                                </LinearLayout>
 
-                                <RelativeLayout
+                                <LinearLayout
                                     android:id="@+id/tabClean"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:background="#5b89ff"
                                     android:orientation="vertical">
 
+
+                                        <TextView
+
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentTop="true"
+
+                                            android:text="Bexiga - sem marcação" />
+
+
                                         <ImageView
+                                            android:id="@+id/itabClean"
+                                            android:scaleType="matrix"
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
-                                            android:layout_marginTop="-26dp"
+                                            android:layout_marginTop="-0dp"
                                             android:src="@drawable/bexiga"/>
 
                                         <!--<TextView
@@ -217,17 +318,11 @@
                                             android:textSize="20dp"
                                             android:text="@string/bexiga" />
 -->
-                                        <TextView
-
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_alignParentTop="true"
-
-                                            android:text="" />
 
 
 
-                                </RelativeLayout>
+
+                                </LinearLayout>
 
                                 <RelativeLayout
                                     android:id="@+id/tabText"
@@ -266,7 +361,7 @@
 
                                 </RelativeLayout>
 
-                                <RelativeLayout
+                                <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:orientation="horizontal">
@@ -380,70 +475,23 @@
 
                                         </android.support.design.widget.CoordinatorLayout>
 
-                                </RelativeLayout>
+                                </LinearLayout>
+
+
+
 
                         </FrameLayout>
 
-                        <RelativeLayout android:layout_width="fill_parent" android:layout_height="55dp"
-                            android:layout_alignParentBottom="true">
-                                <ImageView android:id="@+id/previous" android:src="@drawable/previous"
-                                    android:alpha="0.6"
-                                    android:visibility="invisible"
-                                    android:layout_height="62dp" android:layout_width="40dp"
-                                    android:layout_alignParentLeft="true"
-                                    android:layout_centerVertical="true" />
 
-                                <ImageView android:id="@+id/next" android:src="@drawable/next"
-                                    android:alpha="0.6"
-                                    android:layout_height="62dp" android:layout_width="40dp"
-                                    android:layout_alignParentRight="true"
-                                    android:layout_centerVertical="true" />
+
+                </LinearLayout>
 
 
 
-                                <HorizontalScrollView
-                                    android:layout_width="match_parent"
-                                    android:id="@+id/horizontal"
-                                    android:layout_height="wrap_content"
-                                    android:fillViewport="false"
-                                    android:layout_alignParentBottom="true"
-                                    android:scrollbars="vertical"
-                                    android:fadingEdgeLength="14dp"
-                                    >
-
-                                        <LinearLayout android:id="@+id/home_menu"
-                                            android:orientation="horizontal" android:layout_width="wrap_content"
-                                            android:layout_height="fill_parent" android:gravity="center_vertical">
-
-                                                <TabWidget
-                                                    android:id="@android:id/tabs"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_weight="1"
-
-                                                    android:showDividers="middle"
-                                                    android:layout_marginBottom="-0dp">
-                                                        <!--     android:fadeScrollbars="true"
-                                                             android:fadingEdgeLength="300dp"
-                                                             android:scrollbarAlwaysDrawHorizontalTrack="true"
-                                                             android:scrollbars="horizontal"
-                                                             android:scrollIndicators="right"
-                                                             android:scrollbarDefaultDelayBeforeFade="3000"
-                                                             android:scrollbarTrackHorizontal="@color/cardview_dark_background"
-                                                             android:scrollbarFadeDuration="1000"
-                                                             android:scrollX="-50dp"
-                         -->
-
-
-                                                </TabWidget>
-
-                                        </LinearLayout>
-
-                                </HorizontalScrollView>
-
-                </RelativeLayout>
-                </RelativeLayout>
         </com.daniel.benke.atlask.ReclickableTabHost>
+
+
+
 
 </LinearLayout>
 
