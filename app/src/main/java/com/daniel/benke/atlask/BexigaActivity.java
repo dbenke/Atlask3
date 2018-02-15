@@ -6,6 +6,7 @@ package com.daniel.benke.atlask;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Matrix;
@@ -40,10 +41,21 @@ public class BexigaActivity extends AppCompatActivity {
     private ScaleGestureDetector scaleGestureDetector;
     private Matrix matrix = new Matrix();
 
+    private static final String TAG = BexigaActivity.class.getSimpleName();
+
+    //usado para o log
+    public BexigaActivity() {
+        super();
+    }
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bexiga);
+
+
 
         imageView = (ImageView)findViewById(R.id.itab2);
         iv3 = (ImageView)findViewById(R.id.itab3);
@@ -56,6 +68,83 @@ public class BexigaActivity extends AppCompatActivity {
 
 
         setTitle("Bexiga");
+
+
+
+
+/*
+
+        iv3.setOnTouchListener(new View.OnTouchListener()
+
+        {
+
+   //         float prevX, prevY;
+            @Override
+            public boolean onTouch (View v, MotionEvent event){
+               // scaleGestureDetector.onTouchEvent(event);
+
+
+
+
+
+                float currX = event.getX(), currY = event.getY();
+
+                switch (event.getAction()){
+
+                    //case MotionEvent.ACTION_DOWN:
+                      //  preX = event.getX();
+                      //  preY = event.getY();
+                      //  Log.i("D ON TOUCH EVENT", "DOWN + X: " + preX + " Y " + preY);
+
+                      //  break;
+
+                    case MotionEvent.ACTION_MOVE:
+                    //    Log.i("M ON TOUCH EVENT", "DOWN + X: " + preX + " Y " + preY);
+                     //   currentX = event.getX();
+                     //   currentY = event.getY();
+                        iv3.scrollBy((int) (prevX - currX), (int) (prevY - currY));
+
+                      //  preX = currentX;
+                      //  preY = currentY;
+                        break;
+                    case MotionEvent.ACTION_UP:
+                     //   Log.i("U ON TOUCH EVENT", "DOWN + X: " + preX + " Y " + preY);
+                     //   currentX = event.getX();
+                     //   currentY = event.getY();
+                     //   iv3.scrollBy((int) (preX - currentX-10), (int) (preY - currentY));
+                        break;
+                }
+                prevX = currX;
+                prevY=currY;
+                //iv3.invalidate();
+
+
+
+                return true;
+
+
+
+
+
+
+
+
+
+
+                //iv3.scrollBy(10, 10);
+
+                //return true;
+            }
+
+
+        });
+
+*/
+
+
+
+
+
 
 
         fabtexto = (FloatingActionButton) this.findViewById(R.id.fabtexto);
@@ -238,6 +327,12 @@ public class BexigaActivity extends AppCompatActivity {
 
 
 
+
+                //Toast.makeText(getApplicationContext(), "Cliccado em:" + count, Toast.LENGTH_LONG).show();
+
+                //]host.getContext(), "Cliccado em:" + count, Toast.LENGTH_LONG).show();
+                //this.findViewById(R.id.tabClean)
+
              //   View view = host.getTabWidget().getChildTabViewAt(1);
              //   host.getCurrentTabView().setBackgroundColor(2777);
              //   host.getCurrentTabView().setBackgroundColor(2777);
@@ -251,7 +346,7 @@ public class BexigaActivity extends AppCompatActivity {
                 String current = host.getCurrentTabTag();
                 //imageView = (ImageView) host.getCurrentTabView();
 
-                // Toast.makeText(host.getContext(), "Cliccasdfado em:" + current, Toast.LENGTH_LONG).show();
+               //  Toast.makeText(host.getContext(), "Cliccasdfado em:" + current, Toast.LENGTH_LONG).show();
                 if (current=="zoom") {
                     findViewById(R.id.fabzoom).setVisibility(View.VISIBLE);
                 //    imageView = (ImageView)findViewById(R.id.itabzoom);
@@ -336,6 +431,7 @@ public class BexigaActivity extends AppCompatActivity {
         return true;
     }
 
+    float prevX, prevY;
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
 
@@ -345,10 +441,65 @@ public class BexigaActivity extends AppCompatActivity {
         //imageView.setVisibility(View.VISIBLE);
 
 
-
         scaleGestureDetector.onTouchEvent(ev);
 
+
+
+
+        float currX = ev.getX(), currY = ev.getY();
+
+        //Toast.makeText(this, "Cliccado em:" + count, Toast.LENGTH_LONG).show();
+        //if (currX > iv3.getScrollX())
+
+        switch (ev.getAction()){
+
+            //case MotionEvent.ACTION_DOWN:
+            //  preX = event.getX();
+            //  preY = event.getY();
+            //  Log.i("D ON TOUCH EVENT", "DOWN + X: " + preX + " Y " + preY);
+
+            //  break;
+
+            case MotionEvent.ACTION_MOVE:
+                //    Log.i("M ON TOUCH EVENT", "DOWN + X: " + preX + " Y " + preY);
+                //   currentX = event.getX();
+                //   currentY = event.getY();
+
+                Log.d(TAG, "onCreate() Restoring previous state"+ currX +"   "+ iv3.getScrollX() +"   "+ iv3.getWidth() +"   ");
+
+
+                if (iv3.getScrollX()+(prevX - currX)<1) currX=prevX;
+                if (iv3.getScrollY()+(prevY - currY)<1) currY=prevY;
+                //if (iv3.getScrollX()+(prevX - currX)>760*scale/2) currX=prevX;
+                //if (iv3.getScrollX()+(prevY - currY)>760/scale) currY=prevY;
+                imageView.scrollBy((int) (prevX - currX), (int) (prevY - currY));
+                iv3.scrollBy((int) (prevX - currX), (int) (prevY - currY));
+                iv4.scrollBy((int) (prevX - currX), (int) (prevY - currY));
+                iv5.scrollBy((int) (prevX - currX), (int) (prevY - currY));
+                iv6.scrollBy((int) (prevX - currX), (int) (prevY - currY));
+                iv7.scrollBy((int) (prevX - currX), (int) (prevY - currY));
+
+                //  preX = currentX;
+                //  preY = currentY;
+                break;
+            case MotionEvent.ACTION_UP:
+                //   Log.i("U ON TOUCH EVENT", "DOWN + X: " + preX + " Y " + preY);
+                //   currentX = event.getX();
+                //   currentY = event.getY();
+                //   iv3.scrollBy((int) (preX - currentX-10), (int) (preY - currentY));
+                break;
+        }
+        prevX = currX;
+        prevY = currY;
+        //iv3.invalidate();
         return true;
+
+
+
+
+
+
+
     }
 
     private class ScaleListener extends ScaleGestureDetector.
@@ -357,7 +508,7 @@ public class BexigaActivity extends AppCompatActivity {
         public boolean onScale(ScaleGestureDetector detector) {
 
             scale *= detector.getScaleFactor();
-            scale = Math.max(0.8f, Math.min(scale, 3.0f));
+            scale = Math.max(0.65f, Math.min(scale, 3.0f));
             matrix.setScale(scale, scale);
 
             //float scaleFactor = detector.getScaleFactor();
