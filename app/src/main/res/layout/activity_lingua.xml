@@ -1,473 +1,261 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bexiga"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/linguas"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-
     tools:context=".LinguaActivity">
 
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-
-        <com.daniel.benke.atlask.ReclickableTabHost
-            android:id="@+id/tabHost"
+        <LinearLayout
+            android:id="@+id/viewA"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
+            android:orientation="vertical">
 
-            app:tabMode="scrollable"
-
-            android:layout_centerHorizontal="true">
-
+            <com.daniel.benke.atlask.ReclickableTabHost
+                android:id="@+id/tabHost"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:tabMode="scrollable">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                        <FrameLayout
-                            android:id="@android:id/tabcontent"
+                    <FrameLayout
+                        android:id="@android:id/tabcontent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/tab2"
                             android:layout_width="match_parent"
-                            android:layout_weight="1"
-                            android:padding="0dp"
-                            android:layout_height="match_parent">
-
-                                <RelativeLayout
-                                    android:id="@+id/tab2"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="#5b89ff"
-                                    android:orientation="vertical">
-
-
-                                        <ImageView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:src="@drawable/linguaepitelio"/>
-
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:layout_marginTop="0dp"
-                                            android:gravity="center_horizontal"
-                                            android:textSize="20dp"
-                                            android:text="@string/lingua" />
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginTop="24dp"
-
-                                            android:text="Tecido epitelial Tecido epitelial Tecido epitelial Tecido epitelial Tecido epitelial Tecido epitelial " />
-
-
-
-                                </RelativeLayout>
-
-                                <RelativeLayout
-                                    android:id="@+id/tab3"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="#5b89ff"
-                                    android:orientation="vertical">
-
-                                        <ImageView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:src="@drawable/linguaconjuntivo"/>
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:layout_marginTop="0dp"
-                                            android:gravity="center_horizontal"
-                                            android:textSize="20dp"
-                                            android:text="@string/lingua" />
-                                        <TextView
-
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_alignParentTop="true"
-                                            android:layout_marginTop="24dp"
-                                            android:text="Tecido conjuntivo" />
-
-
-
-                                </RelativeLayout>
-
-                                <RelativeLayout
-                                    android:id="@+id/tab4"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="#5b89ff"
-                                    android:orientation="vertical">
-
-                                        <ImageView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:src="@drawable/linguamuscular"/>
-
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:layout_marginTop="0dp"
-                                            android:gravity="center_horizontal"
-                                            android:textSize="20dp"
-                                            android:text="@string/lingua" />
-
-                                        <TextView
-
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_alignParentTop="true"
-                                            android:layout_marginTop="24dp"
-                                            android:text="Tecido muscular" />
-
-
-
-                                </RelativeLayout>
-
-                                <RelativeLayout
-                                    android:id="@+id/tab5"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="#5b89ff"
-                                    android:orientation="vertical">
-
-                                        <ImageView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:src="@drawable/linguaadiposo"/>
-
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:layout_marginTop="0dp"
-                                            android:gravity="center_horizontal"
-                                            android:textSize="20dp"
-                                            android:text="@string/lingua" />
-
-                                        <TextView
-
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_alignParentTop="true"
-                                            android:layout_marginTop="24dp"
-                                            android:text="Tecido adiposo da língua" />
-
-
-
-                                </RelativeLayout>
-
-                                <RelativeLayout
-                                    android:id="@+id/tab6"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="#5b89ff"
-                                    android:orientation="vertical">
-
-                                        <ImageView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:src="@drawable/linguazoomathumb"/>
-
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:layout_marginTop="0dp"
-                                            android:gravity="center_horizontal"
-                                            android:textSize="20dp"
-                                            android:text="@string/lingua" />
-
-                                        <TextView
-
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_alignParentTop="true"
-                                            android:layout_marginTop="24dp"
-                                            android:text="Zoom do tecido epitelial da língua" />
-
-
-
-                                </RelativeLayout>
-
-                                <RelativeLayout
-                                    android:id="@+id/tab7"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="#5b89ff"
-                                    android:orientation="vertical">
-
-                                        <ImageView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:src="@drawable/linguazoombthumb"/>
-
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:layout_marginTop="0dp"
-                                            android:gravity="center_horizontal"
-                                            android:textSize="20dp"
-                                            android:text="@string/lingua" />
-
-                                        <TextView
-
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_alignParentTop="true"
-                                            android:layout_marginTop="24dp"
-                                            android:text="Zoom do Tecido muscular da língua" />
-
-
-
-                                </RelativeLayout>
-
-                                <RelativeLayout
-                                    android:id="@+id/tabClean"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="#5b89ff"
-                                    android:orientation="vertical">
-
-                                        <ImageView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:src="@drawable/lingua"/>
-
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:layout_marginTop="0dp"
-                                            android:gravity="center_horizontal"
-                                            android:textSize="20dp"
-                                            android:text="@string/lingua" />
-
-                                        <TextView
-
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_alignParentTop="true"
-                                            android:layout_marginTop="24dp"
-                                            android:text=" sem marcação" />
-
-
-
-                                </RelativeLayout>
-
-                                <RelativeLayout
-                                    android:id="@+id/tabText"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="#5b89ff"
-                                    android:orientation="vertical">
-
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:layout_marginTop="0dp"
-                                            android:gravity="center_horizontal"
-                                            android:textSize="20dp"
-                                            android:text="@string/lingua" />
-
-                                        <ScrollView
-                                            android:id="@+id/SCROLLER_ID"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginTop="44dp"
-                                            android:layout_marginBottom ="110dp"
-                                            android:scrollbars="vertical"
-                                            android:fillViewport="true">
-
-
-                                                <TextView
-
-                                                    android:layout_width="wrap_content"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_alignParentTop="true"
-
-
-                                                    android:text="Texto sobre a língua" />
-                                        </ScrollView>
-
-                                </RelativeLayout>
-
-                                <RelativeLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:orientation="horizontal">
-
-                                        <android.support.design.widget.CoordinatorLayout
-                                            xmlns:android="http://schemas.android.com/apk/res/android"
-                                            xmlns:app="http://schemas.android.com/apk/res-auto"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent">
-
-
-                                                <LinearLayout
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="match_parent"
-                                                    android:orientation="vertical">
-
-
-
-                                                        <LinearLayout
-                                                            android:id="@+id/viewA"
-                                                            android:layout_width="match_parent"
-                                                            android:layout_height="match_parent"
-                                                            android:layout_margin="1dp"
-                                                            android:layout_weight=".1"
-
-                                                            android:orientation="horizontal"/>
-
-                                                        <LinearLayout
-                                                            android:id="@+id/viewB"
-                                                            android:layout_width="match_parent"
-                                                            android:layout_height="match_parent"
-                                                            android:layout_margin="1dp"
-                                                            android:layout_weight=".5">
-
-                                                                <LinearLayout
-                                                                    android:id="@+id/viewX"
-                                                                    android:layout_width="match_parent"
-                                                                    android:layout_height="match_parent"
-                                                                    android:layout_margin="1dp"
-                                                                    android:layout_weight=".2"
-
-
-                                                                    android:orientation="horizontal"/>
-
-                                                                <LinearLayout
-                                                                    android:id="@+id/viewY"
-                                                                    android:layout_width="match_parent"
-                                                                    android:layout_height="match_parent"
-                                                                    android:layout_margin="1dp"
-                                                                    android:layout_weight=".2"
-
-                                                                    android:orientation="horizontal"/>
-                                                                <LinearLayout
-                                                                    android:id="@+id/viewZ"
-                                                                    android:layout_width="match_parent"
-                                                                    android:layout_height="match_parent"
-                                                                    android:layout_margin="1dp"
-                                                                    android:layout_weight=".2"
-
-                                                                    android:orientation="horizontal"/>
-
-                                                                <LinearLayout
-                                                                    android:id="@+id/viewW"
-                                                                    android:layout_width="match_parent"
-                                                                    android:layout_height="match_parent"
-                                                                    android:layout_margin="1dp"
-                                                                    android:layout_weight=".2"
-
-                                                                    android:orientation="horizontal"/>
-
-                                                        </LinearLayout>
-
-
-
-                                                </LinearLayout>
-
-
-
-
-                                                <android.support.design.widget.FloatingActionButton
-                                                    android:id="@+id/fabtexto"
-                                                    android:layout_width="wrap_content"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_margin="16dp"
-                                                    android:clickable="true"
-                                                    android:src="@drawable/book"
-                                                    app:layout_anchor="@id/viewY"
-                                                    app:layout_anchorGravity="top|center"
-                                                    />
-                                                <android.support.design.widget.FloatingActionButton
-                                                    android:id="@+id/fabclean"
-                                                    android:layout_width="wrap_content"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_margin="16dp"
-                                                    android:clickable="true"
-                                                    android:src="@drawable/clean"
-                                                    app:layout_anchor="@id/viewZ"
-                                                    app:layout_anchorGravity="top|center"
-                                                    />
-                                                <android.support.design.widget.FloatingActionButton
-                                                    android:id="@+id/fabzoom"
-                                                    android:layout_width="wrap_content"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_margin="16dp"
-                                                    android:clickable="true"
-                                                    android:src="@drawable/zoom"
-                                                    app:layout_anchor="@id/viewW"
-                                                    app:layout_anchorGravity="top|center"
-                                                    />
-
-
-                                        </android.support.design.widget.CoordinatorLayout>
-
-                                </RelativeLayout>
-
-                        </FrameLayout>
-
-                <RelativeLayout android:layout_width="fill_parent" android:layout_height="55dp"
-                    android:layout_alignParentBottom="true">
-                        <ImageView android:id="@+id/previous" android:src="@drawable/previous"
-                            android:alpha="0.6"
-                            android:visibility="invisible"
-                            android:layout_height="62dp" android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:background="#5b89ff"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tabg"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="0dip"
+                                android:text="@string/lingua_epitelio" />
+
+                            <ImageView
+                                android:id="@+id/itab2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="matrix"
+                                android:src="@drawable/linguaepitelio" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tab3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#5b89ff"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:text="@string/lingua_conjuntivo" />
+
+                            <ImageView
+                                android:id="@+id/itab3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="0dp"
+                                android:scaleType="matrix"
+                                android:src="@drawable/linguaconjuntivo" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tab4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#5b89ff"
+                            android:orientation="vertical"
+                            android:scaleType="matrix">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:text="@string/lingua_muscular" />
+
+                            <ImageView
+                                android:id="@+id/itab4"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="0dp"
+                                android:scaleType="matrix"
+                                android:src="@drawable/linguamuscular" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tab5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#5b89ff"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:text="@string/lingua_adiposo" />
+
+                            <ImageView
+                                android:id="@+id/itab5"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="0dp"
+                                android:scaleType="matrix"
+                                android:src="@drawable/linguaadiposo" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tab6"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#5b89ff"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:text="@string/lingua_zooma" />
+
+                            <ImageView
+                                android:id="@+id/itab6"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="0dp"
+                                android:scaleType="matrix"
+                                android:src="@drawable/linguazoomathumb" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tab7"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#5b89ff"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:text="@string/lingua_zoomb" />
+
+                            <ImageView
+                                android:id="@+id/itab7"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="0dp"
+                                android:scaleType="matrix"
+                                android:src="@drawable/linguazoombthumb" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tabClean"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#5b89ff"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:text="Língua - sem marcação" />
+
+                            <ImageView
+                                android:id="@+id/itab1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="-0dp"
+                                android:scaleType="matrix"
+                                android:src="@drawable/lingua" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true">
+
+                        <ImageView
+                            android:id="@+id/previous"
+                            android:layout_width="40dp"
+                            android:layout_height="32dp"
                             android:layout_alignParentLeft="true"
-                            android:layout_centerVertical="true" />
-
-                        <ImageView android:id="@+id/next" android:src="@drawable/next"
+                            android:layout_centerVertical="true"
                             android:alpha="0.6"
-                            android:layout_height="62dp" android:layout_width="40dp"
+                            android:src="@drawable/previous"
+                            android:visibility="invisible" />
+
+                        <ImageView
+                            android:id="@+id/next"
+                            android:layout_width="40dp"
+                            android:layout_height="32dp"
                             android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true" />
-
-
+                            android:layout_centerVertical="true"
+                            android:alpha="0.6"
+                            android:src="@drawable/next" />
 
                         <HorizontalScrollView
-                            android:layout_width="match_parent"
                             android:id="@+id/horizontal"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fillViewport="false"
-                            android:layout_alignParentBottom="true"
-                            android:scrollbars="vertical"
-                            android:fadingEdgeLength="14dp"
-                            >
+                            android:alpha="0.75"
+                            android:background="#5b89ff"
+                            android:scrollbars="horizontal">
 
-                                <LinearLayout android:id="@+id/home_menu"
-                                    android:orientation="horizontal" android:layout_width="wrap_content"
-                                    android:layout_height="fill_parent" android:gravity="center_vertical">
+                            <LinearLayout
+                                android:id="@+id/home_menu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
 
                                 <TabWidget
                                     android:id="@android:id/tabs"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="0"
-                                    android:layout_alignParentBottom="true"
-                                    android:showDividers="middle"
-                                    android:layout_marginBottom="-0dp">
-                               <!--     android:fadeScrollbars="true"
-                                    android:fadingEdgeLength="300dp"
-                                    android:scrollbarAlwaysDrawHorizontalTrack="true"
-                                    android:scrollbars="horizontal"
-                                    android:scrollIndicators="right"
-                                    android:scrollbarDefaultDelayBeforeFade="3000"
-                                    android:scrollbarTrackHorizontal="@color/cardview_dark_background"
-                                    android:scrollbarFadeDuration="1000"
-                                    android:scrollX="-50dp"
--->
-
-
-                                </TabWidget>
-
-                                </LinearLayout>
-
+                                    android:layout_weight="1"
+                                    android:showDividers="middle"></TabWidget>
+                            </LinearLayout>
                         </HorizontalScrollView>
+                    </RelativeLayout>
+                </RelativeLayout>
 
-                </RelativeLayout>
-                </RelativeLayout>
-        </com.daniel.benke.atlask.ReclickableTabHost>
+
+            </com.daniel.benke.atlask.ReclickableTabHost>
+
+        </LinearLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabzoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="80dp"
+            android:layout_marginRight="20dp"
+            android:clickable="true"
+            android:src="@drawable/zoom"
+            app:layout_anchor="@id/viewA"
+            app:layout_anchorGravity="bottom|right" />
+
+    </android.support.design.widget.CoordinatorLayout>
 
 </LinearLayout>
 

@@ -1,14 +1,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/intestino"
+    android:id="@+id/bexiga"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".IntestinoActivity">
+    tools:context=".BexigaActivity">
 
-
-    <android.support.design.widget.CoordinatorLayout
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -17,7 +16,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
 
             <com.daniel.benke.atlask.ReclickableTabHost
                 android:id="@+id/tabHost"
@@ -28,13 +26,11 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-
                     android:orientation="vertical">
 
                     <FrameLayout
                         android:id="@android:id/tabcontent"
                         android:layout_width="match_parent"
-
                         android:layout_height="match_parent">
 
                         <LinearLayout
@@ -42,24 +38,21 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="#5b89ff"
-
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/tabg"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:padding="0dip"
-                                android:text="@string/intestino_epitelio" />
+                                android:text="@string/bexiga_epitelio" />
 
-
-                                <ImageView
-                                    android:id="@+id/itab2"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:scaleType="matrix"
-                                    android:src="@drawable/intestinoepitelio" />
-
-
+                            <ImageView
+                                android:id="@+id/itab2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="matrix"
+                                android:src="@drawable/bexigaepitelio" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -70,20 +63,18 @@
                             android:orientation="vertical">
 
                             <TextView
-
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Tecido conjuntivo" />
-
+                                android:layout_alignParentTop="true"
+                                android:text="@string/bexiga_conjuntivo" />
 
                             <ImageView
                                 android:id="@+id/itab3"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:layout_marginTop="0dp"
                                 android:scaleType="matrix"
-                                android:src="@drawable/intestinoconjuntivo" />
-
-
+                                android:src="@drawable/bexigaconjuntivo" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -91,22 +82,22 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="#5b89ff"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:scaleType="matrix">
 
                             <TextView
-
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Tecido muscular" />
+                                android:layout_alignParentTop="true"
+                                android:text="@string/bexiga_muscular" />
 
                             <ImageView
                                 android:id="@+id/itab4"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:layout_marginTop="0dp"
                                 android:scaleType="matrix"
-                                android:src="@drawable/intestinomuscular" />
-
-
+                                android:src="@drawable/bexigamuscular" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -116,21 +107,19 @@
                             android:background="#5b89ff"
                             android:orientation="vertical">
 
-
                             <TextView
-
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Vaso sanguíneo" />
+                                android:layout_alignParentTop="true"
+                                android:text="@string/bexiga_vaso" />
 
                             <ImageView
                                 android:id="@+id/itab5"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:layout_marginTop="0dp"
                                 android:scaleType="matrix"
-                                android:src="@drawable/intestinovaso" />
-
-
+                                android:src="@drawable/bexigavaso" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -140,45 +129,19 @@
                             android:background="#5b89ff"
                             android:orientation="vertical">
 
-
                             <TextView
-
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Zoom 1 para o Intestino" />
+                                android:layout_alignParentTop="true"
+                                android:text="@string/bexiga_zoom" />
 
                             <ImageView
                                 android:id="@+id/itab6"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:layout_marginTop="0dp"
                                 android:scaleType="matrix"
-                                android:src="@drawable/intestinozoomthumb" />
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/tab7"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="#5b89ff"
-                            android:orientation="vertical">
-
-
-                            <TextView
-
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Zoom 2 para o Intestino" />
-
-                            <ImageView
-                                android:id="@+id/itab7"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:scaleType="matrix"
-                                android:src="@drawable/intestinozoombthumb" />
-
-
+                                android:src="@drawable/bexigazoomthumb" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -189,21 +152,19 @@
                             android:orientation="vertical">
 
                             <TextView
-
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text=" sem marcação" />
+                                android:layout_alignParentTop="true"
+                                android:text="Bexiga - sem marcação" />
 
                             <ImageView
-                                android:id="@+id/itabClean"
+                                android:id="@+id/itab7"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:layout_marginTop="-0dp"
                                 android:scaleType="matrix"
-                                android:src="@drawable/intestino" />
-
-
+                                android:src="@drawable/bexiga" />
                         </LinearLayout>
-
                     </FrameLayout>
 
                     <RelativeLayout
@@ -211,45 +172,13 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true">
 
-
-                        <HorizontalScrollView
-                            android:id="@+id/horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-
-                            android:background="#5b89ff"
-                            android:scrollbars="horizontal">
-
-
-                            <LinearLayout
-                                android:id="@+id/home_menu"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-
-                                android:orientation="horizontal">
-
-
-                                <TabWidget
-                                    android:id="@android:id/tabs"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:alpha="0.75"
-                                    android:showDividers="middle"></TabWidget>
-
-
-                            </LinearLayout>
-
-
-                        </HorizontalScrollView>
-
                         <ImageView
                             android:id="@+id/previous"
                             android:layout_width="40dp"
                             android:layout_height="32dp"
                             android:layout_alignParentLeft="true"
                             android:layout_centerVertical="true"
-                            android:alpha="0.76"
+                            android:alpha="0.6"
                             android:src="@drawable/previous"
                             android:visibility="invisible" />
 
@@ -259,31 +188,52 @@
                             android:layout_height="32dp"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
-                            android:alpha="0.76"
+                            android:alpha="0.6"
                             android:src="@drawable/next" />
 
+                        <HorizontalScrollView
+                            android:id="@+id/horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:alpha="0.75"
+                            android:background="#5b89ff"
+                            android:scrollbars="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/home_menu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TabWidget
+                                    android:id="@android:id/tabs"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:showDividers="middle"></TabWidget>
+                            </LinearLayout>
+                        </HorizontalScrollView>
                     </RelativeLayout>
-
-
                 </RelativeLayout>
 
+
             </com.daniel.benke.atlask.ReclickableTabHost>
+
         </LinearLayout>
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fabzoom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="77dp"
-            android:layout_marginRight="26dp"
+            android:layout_marginBottom="80dp"
+            android:layout_marginRight="20dp"
             android:clickable="true"
             android:src="@drawable/zoom"
             app:layout_anchor="@id/viewA"
             app:layout_anchorGravity="bottom|right" />
 
-
     </android.support.design.widget.CoordinatorLayout>
-
 
 </LinearLayout>
 

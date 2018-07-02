@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.daniel.benke.atlask">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -9,36 +14,96 @@
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FirstActivity"
-            android:screenOrientation="portrait"
-            >
+        <activity
+            android:name=".FirstActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EsofagoActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".EsofagozaActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".LinguaActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".PeleActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".MedulaActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".IntestinoActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".IntestinozbActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".IntestinoZ1Activity" android:screenOrientation="portrait"/>
-        <activity android:name=".BexigaActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".BexigaZActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".LinguazeActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".LinguazepActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".EsofagoZMuscularActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".SobreActivity"
+        <activity
+            android:name=".EsofagoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EsofagozaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LinguaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PeleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MedulaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".IntestinoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Intestino2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".IntestinozbActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".IntestinoZ1Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BexigaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Bexiga2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BexigaZActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LinguazeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LinguazepActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EsofagoZMuscularActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SobreActivity"
             android:label="Sobre o Atlas Virtual"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".FirstActivity"/>
-        <activity android:name=".BexigaTextoActivity"
+            android:parentActivityName=".FirstActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BexigaTextoActivity"
             android:label="Bexiga"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".BexigaActivity"/>
-</application>
+            android:parentActivityName=".BexigaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LinguaTextoActivity"
+            android:label="Língua"
+            android:parentActivityName=".LinguaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".IntestinoTextoActivity"
+            android:label="Intestino"
+            android:parentActivityName=".IntestinoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WriteActivity"
+            android:label="Write"
+            android:parentActivityName=".LinguaActivity" />
+        <activity
+            android:name=".WextActivity"
+            android:label="Write"
+            android:parentActivityName=".LinguaActivity" />
+        <activity
+            android:name=".Wext2Activity"
+            android:label="Write"
+            android:parentActivityName=".LinguaActivity" />
+        <activity
+            android:name=".Wext3Activity"
+            android:label="Write"
+            android:parentActivityName=".LinguaActivity" />
+    </application>
 
 </manifest>

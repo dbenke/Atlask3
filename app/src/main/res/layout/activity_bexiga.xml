@@ -4,90 +4,22 @@
     android:layout_height="match_parent"
     android:id="@+id/bexiga"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
     tools:context=".BexigaActivity">
-
-
 
         <com.daniel.benke.atlask.ReclickableTabHost
             android:id="@+id/tabHost"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-
             app:tabMode="scrollable">
 
-
-
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                        <RelativeLayout android:layout_width="match_parent" android:layout_height="35dp"
-                            android:layout_alignParentBottom="true">
-                                <ImageView android:id="@+id/previous" android:src="@drawable/previous"
-                                    android:alpha="0.6"
-                                    android:visibility="invisible"
-                                    android:layout_height="62dp" android:layout_width="40dp"
-                                    android:layout_alignParentLeft="true"
-                                    android:layout_centerVertical="true" />
-
-                                <ImageView android:id="@+id/next" android:src="@drawable/next"
-                                    android:alpha="0.6"
-                                    android:layout_height="62dp" android:layout_width="40dp"
-                                    android:layout_alignParentRight="true"
-                                    android:layout_centerVertical="true" />
-
-
-
-                                <HorizontalScrollView
-                                    android:layout_width="match_parent"
-                                    android:id="@+id/horizontal"
-                                    android:layout_height="wrap_content"
-                                    android:fillViewport="true"
-
-                                    android:scrollbars="vertical"
-                                    android:fadingEdgeLength="14dp"
-                                    >
-
-                                        <LinearLayout android:id="@+id/home_menu"
-                                            android:orientation="horizontal" android:layout_width="wrap_content"
-                                            android:layout_height="fill_parent" android:gravity="center_vertical">
-
-                                                <TabWidget
-                                                    android:id="@android:id/tabs"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_weight="1"
-
-                                                    android:showDividers="middle"
-                                                    android:layout_marginBottom="-0dp">
-                                                        <!--     android:fadeScrollbars="true"
-                                                             android:fadingEdgeLength="300dp"
-                                                             android:scrollbarAlwaysDrawHorizontalTrack="true"
-                                                             android:scrollbars="horizontal"
-                                                             android:scrollIndicators="right"
-                                                             android:scrollbarDefaultDelayBeforeFade="3000"
-                                                             android:scrollbarTrackHorizontal="@color/cardview_dark_background"
-                                                             android:scrollbarFadeDuration="1000"
-                                                             android:scrollX="-50dp"
-                         -->
-
-
-                                                </TabWidget>
-
-                                        </LinearLayout>
-
-                                </HorizontalScrollView>
-
-                        </RelativeLayout>
-
                         <FrameLayout
                             android:id="@android:id/tabcontent"
                             android:layout_width="match_parent"
-
-                            android:padding="0dp"
                             android:layout_height="match_parent">
 
                                 <LinearLayout
@@ -97,38 +29,19 @@
                                     android:background="#5b89ff"
                                     android:orientation="vertical">
 
-
-                                                <TextView
-                                                    android:id="@+id/tabg"
-                                                    android:layout_width="wrap_content"
-                                                    android:layout_height="wrap_content"
-                                                    android:text="@string/bexiga_epitelio"
-                                                    android:padding="0dip"
-                                                     />
-
-
-
+                                    <TextView
+                                        android:id="@+id/tabg"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/bexiga_epitelio"
+                                        android:padding="0dip"/>
 
                                         <ImageView
                                             android:id="@+id/itab2"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
                                             android:scaleType="matrix"
-
-
-
-                                            android:layout_marginTop="0dp"
                                             android:src="@drawable/bexigaepitelio"/>
-
-
-
-
-
-
-
-
-
-
 
                                         <!--<TextView
                                             android:layout_width="match_parent"
@@ -137,9 +50,6 @@
                                             android:gravity="center_horizontal"
                                             android:textSize="20dp"
                                             android:text="@string/bexiga" />-->
-
-
-
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -483,15 +393,75 @@
                         </FrameLayout>
 
 
+                        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
 
-                </LinearLayout>
+                            <ImageView android:id="@+id/previous" android:src="@drawable/previous"
+                            android:alpha="0.6"
+                            android:visibility="invisible"
+                            android:layout_height="32dp" android:layout_width="40dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true" />
 
+                            <ImageView android:id="@+id/next" android:src="@drawable/next"
+                            android:alpha="0.6"
+                            android:layout_height="32dp" android:layout_width="40dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true" />
+
+                            <HorizontalScrollView
+                                android:layout_width="match_parent"
+                                android:id="@+id/horizontal"
+                                android:layout_height="wrap_content"
+                                android:background="#5b89ff"
+                                android:alpha="0.75"
+
+
+                                android:scrollbars="horizontal"
+
+                                >
+
+                                <LinearLayout android:id="@+id/home_menu"
+                                    android:orientation="horizontal" android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center_vertical">
+
+                                    <TabWidget
+                                        android:id="@android:id/tabs"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+
+
+                                        android:showDividers="middle"
+
+
+                                        >
+
+
+
+
+                                        <!--     android:fadeScrollbars="true"
+                                             android:fadingEdgeLength="300dp"
+                                             android:scrollbarAlwaysDrawHorizontalTrack="true"
+                                             android:scrollbars="horizontal"
+                                             android:scrollIndicators="right"
+                                             android:scrollbarDefaultDelayBeforeFade="3000"
+                                             android:scrollbarTrackHorizontal="@color/cardview_dark_background"
+                                             android:scrollbarFadeDuration="1000"
+                                             android:scrollX="-50dp"
+            -->
+
+
+                                    </TabWidget>
+
+                                </LinearLayout>
+
+                            </HorizontalScrollView>
+
+                        </RelativeLayout>
+                    </RelativeLayout>
 
 
         </com.daniel.benke.atlask.ReclickableTabHost>
-
-
-
 
 </LinearLayout>
 

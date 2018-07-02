@@ -4,91 +4,78 @@ package com.daniel.benke.atlask;
  * Created by Andrea on 06/02/2017.
  */
 
-import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Matrix;
+import android.graphics.RectF;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
+import android.os.Environment;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v4.view.GestureDetectorCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.GestureDetector;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.HorizontalScrollView;
+import android.widget.ImageView;
 import android.widget.TabHost;
-import android.support.design.widget.FloatingActionButton;
-import android.widget.Toast;
 
-public class LinguaActivity extends Activity {
-    ReclickableTabHost tabHost;
-    private FloatingActionButton fab, fabc,fabz;
-    //  LinearLayout esofagoLayout = (LinearLayout) this.findViewById( R.id.esofagos);
-    private TabLayout tabsa;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+
+
+
+public class LinguaActivity extends AppCompatActivity implements GestureDetector.OnGestureListener,GestureDetector.OnDoubleTapListener {
+    private FloatingActionButton fabz;
+    private float scale = 1f;
+    private ImageView iv1, iv2, iv3, iv4, iv5, iv6, iv7;
+    private ScaleGestureDetector scaleGestureDetector;
+    private Matrix matrix = new Matrix();
+    private float cx, cy;
+    private GestureDetectorCompat mDetector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lingua);
+        mDetector = new GestureDetectorCompat(this,this);
+        mDetector.setOnDoubleTapListener(this);
 
-        fab = (FloatingActionButton) this.findViewById(R.id.fabtexto);
-        fabc = (FloatingActionButton) this.findViewById(R.id.fabclean);
+        iv1 = (ImageView) findViewById(R.id.itab1);
+        iv2 = (ImageView) findViewById(R.id.itab2);
+        iv3 = (ImageView) findViewById(R.id.itab3);
+        iv4 = (ImageView) findViewById(R.id.itab4);
+        iv5 = (ImageView) findViewById(R.id.itab5);
+        iv6 = (ImageView) findViewById(R.id.itab6);
+        iv7 = (ImageView) findViewById(R.id.itab7);
+        scaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
+
+        setTitle("Língua");
         fabz = (FloatingActionButton) this.findViewById(R.id.fabzoom);
-
-        this.findViewById(R.id.tabText).setVisibility (View.INVISIBLE);
-        this.findViewById(R.id.tabClean).setVisibility (View.VISIBLE);
-
-        //tabsa = (TabLayout)findViewById(R.id.tabHost);
-        //tabsa.setTabMode(TabLayout.MODE_SCROLLABLE);
-
-        //tabsa = (TabLayout)findViewById(R.id.tabHost);
-
-        final HorizontalScrollView hs = (HorizontalScrollView)findViewById(R.id.horizontal);
-
-
-        TabHost host = (TabHost)findViewById(R.id.tabHost);
+        this.findViewById(R.id.tabClean).setVisibility(View.VISIBLE);
+        final HorizontalScrollView hs = (HorizontalScrollView) findViewById(R.id.horizontal);
+        TabHost host = (TabHost) findViewById(R.id.tabHost);
         String current = host.getCurrentTabTag();
-        // Toast.makeText(view.getContext(), "Cliccado em:" + current, Toast.LENGTH_LONG).show();
-        if (current=="zoom 1"|| current=="zoom 2") {
+
+        if (current == "zoom 1" || current == "zoom 2") {
             findViewById(R.id.fabzoom).setVisibility(View.VISIBLE);
-        }
-        else findViewById(R.id.fabzoom).setVisibility(View.INVISIBLE);
-
-
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                findViewById(R.id.tabText).setVisibility(findViewById(R.id.tabText).getVisibility() == View.INVISIBLE ? View.VISIBLE
-                        : View.INVISIBLE);
-
-//                Intent intent = new Intent(MainActivity.this, NewMessageActivity.class);
-//                startActivity(intent);
-            }
-        });
-
-
-        fabc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                //             findViewById(R.id.tabC).setVisibility(View.VISIBLE);
-                findViewById(R.id.tabClean).setVisibility(findViewById(R.id.tabClean).getVisibility() == View.INVISIBLE ? View.VISIBLE
-                        : View.INVISIBLE);
-//                Intent intent = new Intent(MainActivity.this, NewMessageActivity.class);
-//                startActivity(intent);
-            }
-        });
-
+        } else findViewById(R.id.fabzoom).setVisibility(View.INVISIBLE);
 
         fabz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-                TabHost host = (TabHost)findViewById(R.id.tabHost);
+                TabHost host = (TabHost) findViewById(R.id.tabHost);
                 String current = host.getCurrentTabTag();
 
-                Toast.makeText(view.getContext(), current, Toast.LENGTH_LONG).show();
+
+
                 if (current=="zoom 1") {
 
                     Intent nextScreen = new Intent(getApplicationContext(), LinguazeActivity.class);
@@ -97,26 +84,18 @@ public class LinguaActivity extends Activity {
                 if (current=="zoom 2") {
 
                     Intent nextScreen = new Intent(getApplicationContext(), LinguazepActivity.class);
+
+                    nextScreen = new Intent(getApplicationContext(), Wext2Activity.class);
+
                     startActivity(nextScreen);}
 
 
             }
         });
 
-
-
-
-
-
-
-
-
         host.setup();
-
-
         //Tab 1
         TabHost.TabSpec spec = host.newTabSpec("Tab One");
-
 
         //Tab 2
         spec = host.newTabSpec("epitélio");
@@ -142,7 +121,6 @@ public class LinguaActivity extends Activity {
         spec.setIndicator("adiposo");
         host.addTab(spec);
 
-
         //Tab 6
         spec = host.newTabSpec("zoom 1");
         spec.setContent(R.id.tab6);
@@ -155,111 +133,273 @@ public class LinguaActivity extends Activity {
         spec.setIndicator("zoom 2");
         host.addTab(spec);
 
-
-
-
         ViewTreeObserver vto = hs.getViewTreeObserver();
         vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
                 hs.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-
             }
         });
 
-
-
-
-        // final int maxscrollx = hs.getChildAt(0).getMeasuredWidth()-getWindowManager().getDefaultDisplay().getWidth();
-                               //hs.getChildAt(0).getMeasuredWidth()-getWindowManager().getDefaultDisplay().getWidth()
         hs.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 Log.e("ScrollValue", Integer.toString(hs.getScrollX()));
-         //       if(hs.getScrollX() == maxscrollx){
-         //           Log.e("MaxRight", "MaxRight");
-         //       }
 
-                if (hs.getScrollX()==0) {
-                    findViewById(R.id.previous).setVisibility (View.INVISIBLE);
+                if (hs.getScrollX() == 0) {
+                    findViewById(R.id.previous).setVisibility(View.INVISIBLE);
                 } else {
-                    findViewById(R.id.previous).setVisibility (View.VISIBLE);
+                    findViewById(R.id.previous).setVisibility(View.VISIBLE);
                 }
 
-                if (hs.getScrollX() >= hs.getChildAt(0).getMeasuredWidth()-getWindowManager().getDefaultDisplay().getWidth()) {
-                    findViewById(R.id.next).setVisibility (View.INVISIBLE);
+                if (hs.getScrollX() >= hs.getChildAt(0).getMeasuredWidth() - getWindowManager().getDefaultDisplay().getWidth()) {
+                    findViewById(R.id.next).setVisibility(View.INVISIBLE);
                 } else {
-                    findViewById(R.id.next).setVisibility (View.VISIBLE);
+                    findViewById(R.id.next).setVisibility(View.VISIBLE);
                 }
                 return false;
             }
         });
 
-
-
-
-
-
-
-
         host.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String s) {
                 findViewById(R.id.tabClean).setVisibility(View.INVISIBLE);
-
-
-                TabHost host = (TabHost)findViewById(R.id.tabHost);
+                TabHost host = (TabHost) findViewById(R.id.tabHost);
                 String current = host.getCurrentTabTag();
-                //Toast.makeText(host.getContext(), current, Toast.LENGTH_LONG).show();
+
+                Wext3Activity log = new Wext3Activity();
+                log.Write(getApplicationContext(),current+", ");
+
                 if (current=="zoom 1"|| current=="zoom 2") {
                     findViewById(R.id.fabzoom).setVisibility(View.VISIBLE);
                 }
                 else findViewById(R.id.fabzoom).setVisibility(View.INVISIBLE);
 
-                //HorizontalScrollView horizontalScrollview;
-                //horizontalScrollview = (HorizontalScrollView) findViewById(R.id.horizontal);
+//Wext2Activity.writelog("oioi",Wext2Activity.);
 
-//                if (hs.getScrollX()==0) {
-//                    findViewById(R.id.previous).setVisibility (View.INVISIBLE);
-//                } else {
-//                    findViewById(R.id.previous).setVisibility (View.VISIBLE);
-//                }
-//
-//                if (hs.getScrollX() == hs.getChildAt(0).getMeasuredWidth()-getWindowManager().getDefaultDisplay().getWidth()) {
-//                    findViewById(R.id.next).setVisibility (View.INVISIBLE);
-//                } else {
-//                    findViewById(R.id.next).setVisibility (View.VISIBLE);
-//                }
+
 
 
             }
 
         });
-
-
-
-
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_bexiga, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        switch (item.getItemId()) {
+            // action with ID action_refresh was selected
+            case R.id.action_settings:
+                // Toast.makeText(this, "Refresh selected", Toast.LENGTH_SHORT).show();
+                Intent nextScreen = new Intent(getApplicationContext(), LinguaTextoActivity.class);
+                startActivity(nextScreen);
+                break;
+            default:
+                break;
+        }
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        return true;
+    }
+
+    float prevX, prevY;
+
+
+    @Override
+    public boolean onTouchEvent(MotionEvent ev) {
+        scaleGestureDetector.onTouchEvent(ev);
+
+        if (this.mDetector.onTouchEvent(ev)) {
             return true;
         }
 
-        return super.onOptionsItemSelected(item);
+
+        float currX = ev.getX(), currY = ev.getY();
+
+
+
+        switch (ev.getAction()) {
+
+            //case MotionEvent.ACTION_DOWN:
+            //  prevX = ev.getX();
+             // prevY = ev.getY();
+            //  Log.i("D ON TOUCH EVENT", "DOWN + X: " + preX + " Y " + preY);
+
+            //  break;
+
+
+            case MotionEvent.ACTION_MOVE:
+                //    Log.i("M ON TOUCH EVENT", "DOWN + X: " + preX + " Y " + preY);
+             //      currX = ev.getX();
+             //      currY = ev.getY();
+
+
+                if (iv3.getScrollX() + (prevX - currX) > 0){
+                    iv1.scrollBy((int) (prevX - currX), 0);
+                    iv2.scrollBy((int) (prevX - currX), 0);
+                    iv3.scrollBy((int) (prevX - currX), 0);
+                    iv4.scrollBy((int) (prevX - currX), 0);
+                    iv5.scrollBy((int) (prevX - currX), 0);
+                    iv6.scrollBy((int) (prevX - currX), 0);
+                    iv7.scrollBy((int) (prevX - currX), 0);
+                }
+
+                if (iv3.getScrollY() + (prevY - currY) >0){
+                //if (iv3.getScrollX()+(prevX - currX)>760*scale/2) currX=prevX;
+                //if (iv3.getScrollX()+(prevY - currY)>760/scale) currY=prevY;
+                iv1.scrollBy(0, (int) (prevY - currY));
+                iv2.scrollBy(0, (int) (prevY - currY));
+                iv3.scrollBy(0, (int) (prevY - currY));
+                iv4.scrollBy(0, (int) (prevY - currY));
+                iv5.scrollBy(0, (int) (prevY - currY));
+                iv6.scrollBy(0, (int) (prevY - currY));
+                iv7.scrollBy(0, (int) (prevY - currY));
+                }
+
+
+/*
+//                if (iv3.getScrollX() + (prevX - currX) < 1) break; //currX = prevX;
+//                if (iv3.getScrollY() + (prevY - currY) < 1) break; //currY = prevY;
+
+                //if (iv3.getScrollX()+(prevX - currX)>760*scale/2) currX=prevX;
+                //if (iv3.getScrollX()+(prevY - currY)>760/scale) currY=prevY;
+                iv1.scrollBy((int) (prevX - currX), (int) (prevY - currY));
+                iv2.scrollBy((int) (prevX - currX), (int) (prevY - currY));
+                iv3.scrollBy((int) (prevX - currX), (int) (prevY - currY));
+                iv4.scrollBy((int) (prevX - currX), (int) (prevY - currY));
+                iv5.scrollBy((int) (prevX - currX), (int) (prevY - currY));
+                iv6.scrollBy((int) (prevX - currX), (int) (prevY - currY));
+                iv7.scrollBy((int) (prevX - currX), (int) (prevY - currY));
+*/
+                //  preX = currentX;
+                //  preY = currentY;
+                break;
+            case MotionEvent.ACTION_UP:
+                //   Log.i("U ON TOUCH EVENT", "DOWN + X: " + preX + " Y " + preY);
+                //   currentX = event.getX();
+                //   currentY = event.getY();
+                //   iv3.scrollBy((int) (preX - currentX-10), (int) (preY - currentY));
+                break;
+        }
+        prevX = currX;
+        prevY = currY;
+        cx = currX;
+        cy = currY;
+        //iv3.invalidate();
+        return true;
+
     }
+
+    private class ScaleListener extends ScaleGestureDetector.
+            SimpleOnScaleGestureListener {
+        @Override
+        public boolean onScale(ScaleGestureDetector detector) {
+
+            scale *= detector.getScaleFactor();
+            scale = Math.max(0.45f, Math.min(scale, 3.0f));
+
+            //matrix.setTranslate(scaleGestureDetector.getFocusX(),scaleGestureDetector.getFocusY());
+            matrix.setScale(scale, scale, scaleGestureDetector.getFocusX(), scaleGestureDetector.getFocusY());
+
+            //float scaleFactor = detector.getScaleFactor();
+            //scaleFactor = Math.max(0.1f, Math.min(scaleFactor, 5.0f));
+            //matrix.setScale(scaleFactor, scaleFactor);
+
+            //this.findViewById(R.id.tabClean).setImageMatrix(matrix);
+        /*    iv1.setX(cx);
+            iv2.setX(cx);
+            iv3.setX(cx);
+            iv4.setX(cx);
+            iv1.setY(cy);
+            iv2.setY(cy);
+            iv3.setY(cy);
+            iv4.setY(cy);
+*/
+            iv1.setImageMatrix(matrix);
+            iv2.setImageMatrix(matrix);
+            iv3.setImageMatrix(matrix);
+            iv4.setImageMatrix(matrix);
+            iv5.setImageMatrix(matrix);
+            iv6.setImageMatrix(matrix);
+            iv7.setImageMatrix(matrix);
+
+/*
+            iv1.setX(0);
+            iv2.setX(0);
+            iv3.setX(0);
+            iv4.setX(0);
+            iv1.setY(0);
+            iv2.setY(0);
+            iv3.setY(0);
+            iv4.setY(0);
+*/
+            return true;
+        }
+    }
+
+    @Override
+    public boolean onSingleTapConfirmed(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override
+    public boolean onDoubleTap(MotionEvent event) {
+
+        return true;
+    }
+
+    @Override
+    public boolean onDoubleTapEvent(MotionEvent motionEvent) {
+        scale = 1.0f;
+        matrix.setScale(scale, scale);
+        iv1.setImageMatrix(matrix);
+        iv2.setImageMatrix(matrix);
+        iv3.setImageMatrix(matrix);
+        iv4.setImageMatrix(matrix);
+        iv5.setImageMatrix(matrix);
+        iv6.setImageMatrix(matrix);
+        iv7.setImageMatrix(matrix);
+
+        return false;
+    }
+
+
+    @Override
+    public boolean onDown(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override
+    public void onShowPress(MotionEvent motionEvent) {
+
+    }
+
+    @Override
+    public boolean onSingleTapUp(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override
+    public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
+        return false;
+    }
+
+    @Override
+    public void onLongPress(MotionEvent motionEvent) {
+
+    }
+
+    @Override
+    public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
+        return false;
+    }
+
+
 }
