@@ -1,0 +1,193 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/intestino"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".IntestinoActivity">
+
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/viewA"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight=".1"
+
+                android:orientation="vertical">
+
+
+                <TextView
+
+                    android:id="@+id/text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" sem marcação" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <com.github.chrisbanes.photoview.PhotoView
+                        android:id="@+id/tabClean"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#5b89ff"
+                        android:src="@drawable/intestino">
+
+
+                    </com.github.chrisbanes.photoview.PhotoView>
+
+
+                    <com.github.chrisbanes.photoview.PhotoView
+                        android:id="@+id/tabepi"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#5b89ff"
+                        android:src="@drawable/intestinoepitelio" />
+
+                    <com.github.chrisbanes.photoview.PhotoView
+                        android:id="@+id/tabcon"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#5b89ff"
+                        android:src="@drawable/intestinoconjuntivo" />
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/viewB"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:layout_margin="1dp"
+                android:orientation="horizontal">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true">
+
+
+                    <HorizontalScrollView
+                        android:id="@+id/horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:background="#5b89ff"
+                        android:scrollbars="horizontal">
+
+
+                        <LinearLayout
+                            android:id="@+id/home_menu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+
+                            android:orientation="horizontal">
+
+
+                            <ToggleButton
+                                android:id="@+id/bot1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:alpha="0.75"
+                                android:textOff="@string/epi_off"
+                                android:textOn="@string/epi_on"></ToggleButton>
+
+                            <ToggleButton
+                                android:id="@+id/bot2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:alpha="0.75"
+                                android:showDividers="middle"></ToggleButton>
+
+                            <ToggleButton
+                                android:id="@+id/bot3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:alpha="0.75"
+                                android:showDividers="middle"></ToggleButton>
+
+                            <ToggleButton
+                                android:id="@+id/bot4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:alpha="0.75"
+                                android:showDividers="middle"></ToggleButton>
+
+                            <ToggleButton
+                                android:id="@+id/bot5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:alpha="0.75"
+                                android:showDividers="middle"></ToggleButton>
+
+
+                        </LinearLayout>
+
+
+                    </HorizontalScrollView>
+
+                    <ImageView
+                        android:id="@+id/previous"
+                        android:layout_width="40dp"
+                        android:layout_height="32dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:alpha="0.76"
+                        android:src="@drawable/previous"
+                        android:visibility="invisible" />
+
+                    <ImageView
+                        android:id="@+id/next"
+                        android:layout_width="40dp"
+                        android:layout_height="32dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:alpha="0.76"
+                        android:src="@drawable/next" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabzoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="66dp"
+            android:layout_marginRight="16dp"
+            android:clickable="true"
+            android:src="@drawable/zoom"
+            app:layout_anchor="@id/viewA"
+            app:layout_anchorGravity="bottom|right" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</LinearLayout>
+
+
+
+

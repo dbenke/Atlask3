@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#5b89ff"
-        tools:context=".BexigaTextoActivity"
+        tools:context=".intestinoTextoActivity"
         android:orientation="vertical">
 
         <!--<TextView
@@ -40,7 +40,7 @@
                 android:layout_alignParentTop="true"
 
 
-                android:text="@string/bexiga_texto" />
+                android:text="@string/intestino_texto" />
         </ScrollView>
 
     </RelativeLayout>

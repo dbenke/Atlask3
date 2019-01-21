@@ -6,7 +6,10 @@ package com.daniel.benke.atlask;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Matrix;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
@@ -17,18 +20,35 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.HorizontalScrollView;
+import android.widget.ImageView;
 import android.widget.TabHost;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class BexigaActivity extends AppCompatActivity {
-    ReclickableTabHost tabHost;
+  //  ReclickableTabHost tabHost;
     private FloatingActionButton fabtexto, fabc,fabz;
     //  LinearLayout esofagoLayout = (LinearLayout) this.findViewById( R.id.esofagos);
     private TabLayout tabsa;
+
+    private float scale = 1f;
+    private ImageView imageView, iv3,iv4,iv5,iv6,iv7;
+    private ScaleGestureDetector scaleGestureDetector;
+    private Matrix matrix = new Matrix();
+
+    private static final String TAG = BexigaActivity.class.getSimpleName();
+
+    //usado para o log
+    public BexigaActivity() {
+        super();
+    }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +57,94 @@ public class BexigaActivity extends AppCompatActivity {
 
 
 
+        imageView = (ImageView)findViewById(R.id.itab2);
+        iv3 = (ImageView)findViewById(R.id.itab3);
+        iv4 = (ImageView)findViewById(R.id.itab4);
+        iv5 = (ImageView)findViewById(R.id.itab5);
+        iv6 = (ImageView)findViewById(R.id.itabzoom);
+        iv7 = (ImageView)findViewById(R.id.itabClean);
+        scaleGestureDetector = new ScaleGestureDetector(this,new ScaleListener());
+
+
+
         setTitle("Bexiga");
+
+
+
+
+/*
+
+        iv3.setOnTouchListener(new View.OnTouchListener()
+
+        {
+
+   //         float prevX, prevY;
+            @Override
+            public boolean onTouch (View v, MotionEvent event){
+               // scaleGestureDetector.onTouchEvent(event);
+
+
+
+
+
+                float currX = event.getX(), currY = event.getY();
+
+                switch (event.getAction()){
+
+                    //case MotionEvent.ACTION_DOWN:
+                      //  preX = event.getX();
+                      //  preY = event.getY();
+                      //  Log.i("D ON TOUCH EVENT", "DOWN + X: " + preX + " Y " + preY);
+
+                      //  break;
+
+                    case MotionEvent.ACTION_MOVE:
+                    //    Log.i("M ON TOUCH EVENT", "DOWN + X: " + preX + " Y " + preY);
+                     //   currentX = event.getX();
+                     //   currentY = event.getY();
+                        iv3.scrollBy((int) (prevX - currX), (int) (prevY - currY));
+
+                      //  preX = currentX;
+                      //  preY = currentY;
+                        break;
+                    case MotionEvent.ACTION_UP:
+                     //   Log.i("U ON TOUCH EVENT", "DOWN + X: " + preX + " Y " + preY);
+                     //   currentX = event.getX();
+                     //   currentY = event.getY();
+                     //   iv3.scrollBy((int) (preX - currentX-10), (int) (preY - currentY));
+                        break;
+                }
+                prevX = currX;
+                prevY=currY;
+                //iv3.invalidate();
+
+
+
+                return true;
+
+
+
+
+
+
+
+
+
+
+                //iv3.scrollBy(10, 10);
+
+                //return true;
+            }
+
+
+        });
+
+*/
+
+
+
+
+
 
 
         fabtexto = (FloatingActionButton) this.findViewById(R.id.fabtexto);
@@ -131,6 +238,8 @@ public class BexigaActivity extends AppCompatActivity {
         spec = host.newTabSpec("epitélio");
         spec.setContent(R.id.tab2);
         spec.setIndicator("epitélio");
+       // spec.setIndicator("epitélio",getResources().getDrawable(setBackgroundColor(view.Color.BLACK));
+
         host.addTab(spec);
 
         //Tab 3
@@ -213,15 +322,39 @@ public class BexigaActivity extends AppCompatActivity {
 
                 findViewById(R.id.tabClean).setVisibility(View.INVISIBLE);
 
-                TabHost host = (TabHost)findViewById(R.id.tabHost);
-                String current = host.getCurrentTabTag();
 
-                // Toast.makeText(host.getContext(), "Cliccasdfado em:" + current, Toast.LENGTH_LONG).show();
+                TabHost host = (TabHost)findViewById(R.id.tabHost);
+
+
+
+
+                //Toast.makeText(getApplicationContext(), "Cliccado em:" + count, Toast.LENGTH_LONG).show();
+
+                //]host.getContext(), "Cliccado em:" + count, Toast.LENGTH_LONG).show();
+                //this.findViewById(R.id.tabClean)
+
+             //   View view = host.getTabWidget().getChildTabViewAt(1);
+             //   host.getCurrentTabView().setBackgroundColor(2777);
+             //   host.getCurrentTabView().setBackgroundColor(2777);
+             //   TextView textView = (TextView)host.findViewById(R.id.tabg);
+             //   textView.setTextColor(Color.WHITE);
+
+
+
+
+
+                String current = host.getCurrentTabTag();
+                //imageView = (ImageView) host.getCurrentTabView();
+
+               //  Toast.makeText(host.getContext(), "Cliccasdfado em:" + current, Toast.LENGTH_LONG).show();
                 if (current=="zoom") {
                     findViewById(R.id.fabzoom).setVisibility(View.VISIBLE);
+                //    imageView = (ImageView)findViewById(R.id.itabzoom);
                 }
 
-                else findViewById(R.id.fabzoom).setVisibility(View.INVISIBLE);
+                else {findViewById(R.id.fabzoom).setVisibility(View.INVISIBLE);
+                //imageView = (ImageView)findViewById(R.id.itabClean);
+                }
 
 
 
@@ -297,4 +430,103 @@ public class BexigaActivity extends AppCompatActivity {
 
         return true;
     }
+
+    float prevX, prevY;
+    @Override
+    public boolean onTouchEvent(MotionEvent ev) {
+
+
+        //findViewById(R.id.tabClean).setVisibility(View.VISIBLE);
+
+        //imageView.setVisibility(View.VISIBLE);
+
+
+        scaleGestureDetector.onTouchEvent(ev);
+
+
+
+
+        float currX = ev.getX(), currY = ev.getY();
+
+        //Toast.makeText(this, "Cliccado em:" + count, Toast.LENGTH_LONG).show();
+        //if (currX > iv3.getScrollX())
+
+        switch (ev.getAction()){
+
+            //case MotionEvent.ACTION_DOWN:
+            //  preX = event.getX();
+            //  preY = event.getY();
+            //  Log.i("D ON TOUCH EVENT", "DOWN + X: " + preX + " Y " + preY);
+
+            //  break;
+
+            case MotionEvent.ACTION_MOVE:
+                //    Log.i("M ON TOUCH EVENT", "DOWN + X: " + preX + " Y " + preY);
+                //   currentX = event.getX();
+                //   currentY = event.getY();
+
+                Log.d(TAG, "onCreate() Restoring previous state"+ currX +"   "+ iv3.getScrollX() +"   "+ iv3.getWidth() +"   ");
+
+
+                if (iv3.getScrollX()+(prevX - currX)<1) currX=prevX;
+                if (iv3.getScrollY()+(prevY - currY)<1) currY=prevY;
+                //if (iv3.getScrollX()+(prevX - currX)>760*scale/2) currX=prevX;
+                //if (iv3.getScrollX()+(prevY - currY)>760/scale) currY=prevY;
+                imageView.scrollBy((int) (prevX - currX), (int) (prevY - currY));
+                iv3.scrollBy((int) (prevX - currX), (int) (prevY - currY));
+                iv4.scrollBy((int) (prevX - currX), (int) (prevY - currY));
+                iv5.scrollBy((int) (prevX - currX), (int) (prevY - currY));
+                iv6.scrollBy((int) (prevX - currX), (int) (prevY - currY));
+                iv7.scrollBy((int) (prevX - currX), (int) (prevY - currY));
+
+                //  preX = currentX;
+                //  preY = currentY;
+                break;
+            case MotionEvent.ACTION_UP:
+                //   Log.i("U ON TOUCH EVENT", "DOWN + X: " + preX + " Y " + preY);
+                //   currentX = event.getX();
+                //   currentY = event.getY();
+                //   iv3.scrollBy((int) (preX - currentX-10), (int) (preY - currentY));
+                break;
+        }
+        prevX = currX;
+        prevY = currY;
+        //iv3.invalidate();
+        return true;
+
+
+
+
+
+
+
+    }
+
+    private class ScaleListener extends ScaleGestureDetector.
+            SimpleOnScaleGestureListener {
+        @Override
+        public boolean onScale(ScaleGestureDetector detector) {
+
+            scale *= detector.getScaleFactor();
+            scale = Math.max(0.65f, Math.min(scale, 3.0f));
+            matrix.setScale(scale, scale);
+
+            //float scaleFactor = detector.getScaleFactor();
+            //scaleFactor = Math.max(0.1f, Math.min(scaleFactor, 5.0f));
+            //matrix.setScale(scaleFactor, scaleFactor);
+
+            //this.findViewById(R.id.tabClean).setImageMatrix(matrix);
+
+            imageView.setImageMatrix(matrix);
+            iv3.setImageMatrix(matrix);
+            iv4.setImageMatrix(matrix);
+            iv5.setImageMatrix(matrix);
+            iv6.setImageMatrix(matrix);
+            iv7.setImageMatrix(matrix);
+            return true;
+        }
+    }
+
+
+
 }
